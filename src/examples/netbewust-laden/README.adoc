@@ -1,0 +1,54 @@
+# Set-up
+
+Use the _upcoming_ version of _build-dp_ to run the commands below. Use the the
+directory containing this README as base directory for the container. If
+something doesn't work, look at paths first.
+
+# Pre-processing
+
+## Unique `cim:Substation`-s
+
+[source,bash]
+----
+$ csvsql -d ';' --no-inference --query "SELECT DISTINCT SUBSTATION_NAME, STREETADDRESS_POSTALCODE, STREETDETAIL_NUMBER, POSITIONPOINT_XPOSITION, POSITIONPOINT_YPOSITION from knelpunt GROUP BY SUBSTATION_NAME" csv/knelpunt.csv > csv/substation.csv
+----
+
+## Unique `cim:EnergyConsumer`-s
+
+[source,bash]
+----
+$ csvsql -d ';' --no-inference --query "SELECT DISTINCT MARKETEVALUATIONPOINT_EAN, STREETADDRESS_POSTALCODE, STREETDETAIL_NUMBER, POSITIONPOINT_XPOSITION, POSITIONPOINT_YPOSITION from laadpaal GROUP BY MARKETEVALUATIONPOINT_EAN" csv/laadpaal.csv > csv/energy-consumer.csv
+----
+
+# Convert to profiles
+
+## Equipment (EQ)
+
+[source,bash]
+----
+$ csvcut -c 1 csv/substation.csv|tail -n +2|gen-linkml-profile template --var ssn templates/substation.yml.tpl >> jsonld/equipment.example.yml
+$ csvcut -d ';' -c 1,2,26,30 csv/knelpunt.csv|tail -n +2|gen-linkml-profile template --var ssn --var pt --var c --var c_nbl templates/power-transformer.yml.tpl >> jsonld/equipment.example.yml
+$ csvcut -c 1,2,3 csv/energy-consumer.csv|tail -n +2|gen-linkml-profile template --var ean --var pc --var hn templates/energy-consumer.yml.tpl >> jsonld/equipment.example.yml
+----
+
+## Topology (TP)
+
+[source,bash]
+----
+$ csvcut -d ';' -c 1,2,5,7 csv/laadpaal.csv|tail -n +2|gen-linkml-profile template --var ean --var pt --var pc --var hn templates/topology.yml.tpl >> jsonld/topology.example.yml
+----
+
+## GeoLocation (GL)
+
+[source,bash]
+----
+$ csvcut -c 1,2,3,4,5 csv/substation.csv|tail -n +2|gen-linkml-profile template --var ssn --var pc --var hn --var x_pos --var y_pos templates/geolocation-ss.yml.tpl >> jsonld/geolocation.example.yml
+$ csvcut -c 1,2,3,4,5 csv/energy-consumer.csv|tail -n +2|gen-linkml-profile template --var ean --var pc --var hn --var x_pos --var y_pos templates/geolocation-ec.yml.tpl >> jsonld/geolocation.example.yml
+----
+
+## Operation (OP)
+
+[source,bash]
+----
+$ csvcut -d ';' -c 1,2,21 csv/knelpunt.csv|tail -n +2|gen-linkml-profile template --var ssn --var pt --var v templates/operation.yml.tpl >> jsonld/operation.example.yml
+----

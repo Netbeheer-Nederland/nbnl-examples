@@ -1,0 +1,34 @@
+## Equipment (EQ)
+
+[source,bash]
+----
+$ csvcut -c 1,2,3 csv/transformator.csv|gen-linkml-profile template --var ssn $ssn --var pt $pt --var c $c templates/equipment.yml.tpl >> yml/equipment.example.yml
+----
+
+## Equipment (EQ)
+
+[source,bash]
+----
+$ csvcut -c 2,3,4 csv/aansluiting.csv|gen-linkml-profile template --var pt $pt --var pc $pc --var hn $hn templates/energy_consumer.yml.tpl >> yml/equipment.example.yml
+----
+
+## Topology (TP)
+
+[source,bash]
+----
+$ csvcut -c 2,3,4 csv/aansluiting.csv|gen-linkml-profile template --var pt $pt --var pc $pc --var hn $hn templates/topology.yml.tpl >> yml/topology.example.yml
+----
+
+## Geographical Location (GL)
+
+[source,bash]
+----
+$ csvcut -c 3,4 csv/aansluiting.csv|gen-linkml-profile template --var pc $pc --var hn $hn templates/geolocation.yml.tpl >> yml/geolocation.example.yml
+----
+
+## Operation (OP)
+
+[source,bash]
+----
+$ csvcut -c 2,3,4 csv/belasting.csv|gen-linkml-profile template --var pt $pt --var v $v --var ts $ts templates/operation.yml.tpl >> yml/operation.example.yml
+----

@@ -1,0 +1,37 @@
+'@context':
+  linkml: https://w3id.org/linkml/
+  cim: https://cim.ucaiug.io/ns#
+  dcterms: http://purl.org/dc/terms/
+  eu: https://cim.ucaiug.io/ns/eu#
+  nbnl: https://begrippen.netbeheernederland.nl/energiesysteembeheer/nl/page/
+  nl: https://cim.ucaiug.io/ns/nl#
+  xsd: http://www.w3.org/2001/XMLSchema#
+'@graph':
+  # --- cim:TopologicalNode (PTE2/PTE1/EC) ------------------------------------
+  - '@id': urn:uuid:6a6e6bb8-d3b5-418d-b722-134169e38bba
+    '@type': cim:TopologicalNode
+    cim:TopologicalNode.Terminal:
+      - urn:uuid:b390442a-1dfc-46f2-a324-fe405282c65d
+      - urn:uuid:0daa99b8-0d47-5c3c-a5cd-0ac855422a6b
+      - urn:uuid:f45aab76-75c6-4b63-8806-39660181e86e
+    cim:IdentifiedObject.mRID: 6a6e6bb8-d3b5-418d-b722-134169e38bba
+  # --- cim:BusNameMarker (OS/RS) ---------------------------------------------
+  - '@id': urn:uuid:bbd370b3-4e84-4801-9d26-9596f376c8f5
+    '@type': cim:BusNameMarker
+    cim:BusNameMarker.Terminal:
+      - urn:uuid:b390442a-1dfc-46f2-a324-fe405282c65d
+      - urn:uuid:0daa99b8-0d47-5c3c-a5cd-0ac855422a6b
+    cim:BusNameMarker.TopologicalNode:
+      '@id': urn:uuid:6a6e6bb8-d3b5-418d-b722-134169e38bba
+    cim:IdentifiedObject.mRID: bbd370b3-4e84-4801-9d26-9596f376c8f5
+    cim:IdentifiedObject.name: 'PTE-PTE'
+  # --- cim:BusNameMarker (OS/EC) ---------------------------------------------
+  - '@id': urn:uuid:4cc91ddc-efdc-47eb-9d10-ea59bcd1beb9
+    '@type': cim:BusNameMarker
+    cim:BusNameMarker.Terminal:
+      - urn:uuid:b390442a-1dfc-46f2-a324-fe405282c65d
+      - urn:uuid:f45aab76-75c6-4b63-8806-39660181e86e
+    cim:BusNameMarker.TopologicalNode:
+      '@id': urn:uuid:6a6e6bb8-d3b5-418d-b722-134169e38bba
+    cim:IdentifiedObject.mRID: 4cc91ddc-efdc-47eb-9d10-ea59bcd1beb9
+    cim:IdentifiedObject.name: 'PTE-EC'

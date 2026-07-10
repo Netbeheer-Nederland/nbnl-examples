@@ -1,0 +1,195 @@
+# Capaciteitskaart
+
+## Equipment: `Substation`-s
+
+[source,bash]
+----
+$ jq -r '[ .. | objects | select(.substation_short_code?) | [ .substation_short_code ] ] | unique[] | @csv' json/LIANDER_20260401_v210.json|gen-linkml-profile template --var ssn templates/substation.yml.tpl >> yml/equipment.example.yml
+----
+
+## Equipment: `PowerTransformer`-s
+
+[source,bash]
+----
+$ jq -r '
+  [
+    .. | .energy_areas? // empty
+    | .[]
+    | .area_capacity[0] as $cap
+    | .postcode_areas[]
+    | [
+        .substation_short_code,
+        .description,
+        $cap.demand_available_capacity,
+        $cap.generation_available_capacity
+      ]
+  ]
+  | unique
+  | .[]
+  | @csv' json/LIANDER_20260401_v210.json|gen-linkml-profile template --var ssn --var pt --var dc --var gc templates/power-transformer.yml.tpl >> yml/equipment.example.yml
+----
+
+## Equipment: `Contingency`-s
+
+[source,bash]
+----
+$ jq -r '
+  [
+    .. | .energy_areas? // empty
+    | .[]
+    | .postcode_areas[]
+    | [
+        .substation_short_code,
+        .description,
+        .demand_constraint
+      ]
+  ]
+  | unique
+  | unique_by(.[1])
+  | .[]
+  | @csv' json/LIANDER_20260401_v210.json|gen-linkml-profile template --var ssn --var pt --var dc templates/contingency.yml.tpl >> yml/equipment.example.yml
+----
+
+[source,bash]
+----
+$ jq -r '
+  [
+    .. | .energy_areas? // empty
+    | .[]
+    | .demand_alleviation_year as $year
+    | .postcode_areas[]
+    | [
+        .substation_short_code,
+        .description,
+        .demand_constraint,
+        $year
+      ]
+  ]
+  | unique
+  | unique_by(.[1])
+  | .[]
+  | @csv' json/LIANDER_20260401_v210.json|gen-linkml-profile template --var ssn --var pt --var dc --var year templates/congestion-document.yml.tpl >> yml/asset.example.yml
+----
+
+## Topology
+
+[source,bash]
+----
+$ jq -r '
+  [
+    .. | .energy_areas? // empty
+    | .[]
+    | .postcode_areas[]
+    | [
+        .postcode,
+        .substation_short_code,
+        .description
+      ]
+  ]
+  | unique
+  | .[]
+  | @csv
+' json/LIANDER_20260401_v210.json|gen-linkml-profile template --var pc --var ssn --var pt templates/topology.yml.tpl >> yml/topology.example.yml
+----
+
+## GeographicalLocation
+
+[source,bash]
+----
+$ jq -r '
+  [
+    .. | .energy_areas? // empty
+    | .[]
+    | .postcode_areas[]
+    | [
+        .postcode,
+        .substation_short_code,
+        .description
+      ]
+  ]
+  | unique
+  | .[]
+  | @csv
+' json/LIANDER_20260401_v210.json|gen-linkml-profile template --var pc --var ssn --var pt templates/geographical-location.yml.tpl >> yml/geographical-location.example.yml
+----
+
+## Operation
+
+[source,bash]
+----
+$ jq -r '
+  [
+    .. | .energy_areas? // empty
+    | .[]
+    | .area_capacity[0] as $cap
+    | .postcode_areas[]
+    | [
+        .substation_short_code,
+        .description,
+        $cap.demand_capacity_in_queue,
+        $cap.demand_requests_in_queue,
+        $cap.demand_quoted_capacity
+      ]
+  ]
+  | unique
+  | .[]
+  | @csv' json/LIANDER_20260401_v210.json|gen-linkml-profile template --var ssn --var pt --var dap --var rq --var gtc templates/operation.yml.tpl >> yml/operation.example.yml
+----
+
+## Asset
+
+[source,bash]
+----
+$ jq -r '
+[
+  .. | .energy_areas? // empty
+  | .[]
+  | .short_code as $sc
+  | .works? // empty
+  | .[]
+  | [
+      $sc
+    ]
+]
+| unique
+| .[]
+| @csv' json/LIANDER_20260401_v210.json|gen-linkml-profile template --var pt templates/asset.yml.tpl >> yml/asset.example.yml
+
+$ jq -r '
+[
+  .. | .energy_areas? // empty
+  | .[]
+  | .short_code as $sc
+  | .works? // empty
+  | .[]
+  | [
+      $sc,
+      .project_name,
+      .source,
+      .status_kind,
+      (
+        [
+          .time_schedules? // empty
+          | .[]
+          | .schedule_interval.year
+        ]
+        | max // empty
+      )
+    ]
+]
+| unique
+| .[]
+| @csv' json/LIANDER_20260401_v210.json|gen-linkml-profile template --var pt --var proj --var source --var status --var year templates/work.yml.tpl >> yml/asset.example.yml
+----
+
+## Aannames
+
+1. `cim:Substation`-s zijn aangeleverd door Liander, moeten uit de boundary
+   dataset van TenneT komen en gekoppeld worden
+2. `cim:BaseVoltage` voor de secundaire zijde van de trafo's is niet bekend,
+   wordt nu voor alle `cim:VoltageLevel`-s op 10 kV gezet
+3. [gecontroleerd] alle postcodes zijn uniek, er worden geen postcodes aan
+   meerdere trafo's gekoppeld
+4. `cim:Contingency` wordt alleen op `cim:PowerTransformer` gebruikt (niet voor
+   verbindingen). De `cim:EnergyArea`-s worden versimpeld tot 1 kleurcode voor
+   invoeding/afname, waarmee (minimaal) informatie verloren gaat

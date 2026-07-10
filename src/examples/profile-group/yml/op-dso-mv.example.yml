@@ -1,0 +1,61 @@
+'@context':
+  linkml: https://w3id.org/linkml/
+  cim: https://cim.ucaiug.io/ns#
+  dcterms: http://purl.org/dc/terms/
+  eu: https://cim.ucaiug.io/ns/eu#
+  nbnl: https://begrippen.netbeheernederland.nl/energiesysteembeheer/nl/page/
+  nl: https://cim.ucaiug.io/ns/nl#
+  xsd: http://www.w3.org/2001/XMLSchema#
+'@graph':
+  # --- cim:Analog (PT3) ------------------------------------------------------
+  - '@id': urn:uuid:40d27cc1-9ed6-4eee-a379-40de45bda860
+    '@type': cim:Analog
+    cim:Analog.positiveFlowIn: false
+    cim:Measurement.measurementType:
+      '@id': nl:MeasurementKind.benodigdeTransportcapaciteit
+    cim:Measurement.unitMultiplier:
+      '@id': cim:UnitMultiplier.M
+    cim:Measurement.unitSymbol:
+      '@id': cim:UnitSymbol.W
+    cim:Measurement.Terminal:
+      '@id': urn:uuid:8feb418f-87b5-4454-ab3b-d38b4d7a1839
+    cim:Measurement.PowerSystemResource:
+      '@id': urn:uuid:f3695f11-3219-4a5a-9ae0-1fc6e815efcf
+    cim:IdentifiedObject.mRID: 40d27cc1-9ed6-4eee-a379-40de45bda860
+    cim:IdentifiedObject.name: 'Benodigde transportcapaciteit (afname)'
+  - '@id': urn:uuid:283d0183-92a8-4201-a63e-f45923067095
+    '@type': cim:AnalogValue
+    cim:AnalogValue.value:
+      '@value': 67.0
+      '@type': xsd:float
+    cim:AnalogValue.Analog:
+      '@id': urn:uuid:40d27cc1-9ed6-4eee-a379-40de45bda860
+    cim:MeasurementValue.timeStamp:
+      '@value': '2026-07-06T15:39:50.742994Z'
+      '@type': xsd:datetime
+    cim:IdentifiedObject.mRID: 283d0183-92a8-4201-a63e-f45923067095
+  # --- cim:Analog (n-1) ------------------------------------------------------
+  - '@id': urn:uuid:b0554449-6195-4fe8-8f29-b2b1dc02358b
+    '@type': cim:Analog
+    cim:Analog.positiveFlowIn: false
+    cim:Measurement.measurementType:
+      '@id': nl:MeasurementKind.benodigdeTransportcapaciteit
+    cim:Measurement.unitMultiplier:
+      '@id': cim:UnitMultiplier.M
+    cim:Measurement.unitSymbol:
+      '@id': cim:UnitSymbol.W
+    nl:Measurement.SeriesEquipmentDependentLimit:
+      - urn:uuid:33b8f266-9d7f-43dc-bb6c-5a4d1acd1325
+    cim:IdentifiedObject.mRID: b0554449-6195-4fe8-8f29-b2b1dc02358b
+    cim:IdentifiedObject.name: 'Benodigde transportcapaciteit (grid security n-1) (afname)'
+  - '@id': urn:uuid:0ff66cdb-8ba4-44ed-8151-d2a09c1989d5
+    '@type': cim:AnalogValue
+    cim:AnalogValue.value:
+      '@value': 147.0
+      '@type': xsd:float
+    cim:AnalogValue.Analog:
+      '@id': urn:uuid:b0554449-6195-4fe8-8f29-b2b1dc02358b
+    cim:MeasurementValue.timeStamp:
+      '@value': '2026-07-06T17:30:46.256612Z'
+      '@type': xsd:datetime
+    cim:IdentifiedObject.mRID: 0ff66cdb-8ba4-44ed-8151-d2a09c1989d5

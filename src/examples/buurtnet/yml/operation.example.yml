@@ -1,0 +1,23 @@
+'@context':
+  linkml: https://w3id.org/linkml/
+  cbs: https://www.cbs.nl/nl-nl/onze-diensten/methoden/begrippen/
+  cim: https://cim.ucaiug.io/ns#
+  eu: https://cim.ucaiug.io/ns/eu#
+  nbnl: https://begrippen.netbeheernederland.nl/energiesysteembeheer/nl/page/
+  nl: https://cim.ucaiug.io/ns/nl#
+  skos: http://www.w3.org/2004/02/skos/core#
+  xsd: http://www.w3.org/2001/XMLSchema#
+  github: https://github.com/
+  dcterms: http://purl.org/dc/terms/
+'@id': urn:uuid:7fbace1c-1587-11f1-8326-8f032c55e35e
+'dcterms:issued':
+  '@value': 2026-02-27T12:00:000Z
+  '@type': xsd:date
+'dcterms:publisher':
+  '@id': urn:uuid:4f74c8e2-adb5-4815-9607-eb00fb6a0d55
+  'dcterms:title': 'Liander'
+'dcterms:conformsTo':
+  - '@id': https://modellen.netbeheernederland.nl/nbnl-operation/1.0
+'dcterms:references':
+  - '@id': urn:uuid:51c81aaa-1587-11f1-b0bf-8bf4d9aaa3dc
+'@graph':

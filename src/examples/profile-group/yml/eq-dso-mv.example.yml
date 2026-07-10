@@ -1,0 +1,518 @@
+'@context':
+  linkml: https://w3id.org/linkml/
+  cim: https://cim.ucaiug.io/ns#
+  dcterms: http://purl.org/dc/terms/
+  eu: https://cim.ucaiug.io/ns/eu#
+  nbnl: https://begrippen.netbeheernederland.nl/energiesysteembeheer/nl/page/
+  nl: https://cim.ucaiug.io/ns/nl#
+  xsd: http://www.w3.org/2001/XMLSchema#
+'@graph':
+  # --- cim:PowerTransformer (1) ----------------------------------------------
+  - '@id': urn:uuid:b7949224-9031-4365-a891-ffcdac3efcf7
+    '@type': cim:PowerTransformer
+    cim:Equipment.EquipmentContainer:
+      '@id': urn:uuid:e5f75ac7-664f-40c4-aded-3e8133e0e727
+    cim:IdentifiedObject.mRID: b7949224-9031-4365-a891-ffcdac3efcf7
+    cim:IdentifiedObject.name: 'PT1'
+  # --- cim:PowerTransformerEnd (1-1) -----------------------------------------
+  - '@id': urn:uuid:2159a5bd-180a-4a2d-bbe1-9f0304e11e3d
+    '@type': cim:PowerTransformerEnd
+    cim:PowerTransformerEnd.PowerTransformer:
+      '@id': urn:uuid:b7949224-9031-4365-a891-ffcdac3efcf7
+    cim:TransformerEnd.endNumber: 1
+    cim:TransformerEnd.Terminal:
+      '@id': urn:uuid:15d64088-0127-48b1-a06d-52453713ebb9
+    cim:IdentifiedObject.mRID: 2159a5bd-180a-4a2d-bbe1-9f0304e11e3d
+    cim:IdentifiedObject.name: 'PTE1'
+  - '@id': urn:uuid:15d64088-0127-48b1-a06d-52453713ebb9
+    '@type': cim:Terminal
+    cim:Terminal.ConnectivityNode:
+      '@id': urn:uuid:7c66aa00-f7fd-47c9-9b34-30a186ab9476
+    cim:Terminal.ConductingEquipment:
+      '@id': urn:uuid:b7949224-9031-4365-a891-ffcdac3efcf7
+    cim:IdentifiedObject.mRID: 15d64088-0127-48b1-a06d-52453713ebb9
+  # --- cim:PowerTransformerEnd (1-2) -----------------------------------------
+  - '@id': urn:uuid:c86ab722-f2fe-432c-89b5-46ebd3ecf2cf
+    '@type': cim:PowerTransformerEnd
+    cim:PowerTransformerEnd.PowerTransformer:
+      '@id': urn:uuid:b7949224-9031-4365-a891-ffcdac3efcf7
+    cim:TransformerEnd.endNumber: 2
+    cim:TransformerEnd.Terminal:
+      '@id': urn:uuid:b390442a-1dfc-46f2-a324-fe405282c65d
+    cim:IdentifiedObject.mRID: c86ab722-f2fe-432c-89b5-46ebd3ecf2cf
+    cim:IdentifiedObject.name: 'PTE2'
+  - '@id': urn:uuid:b390442a-1dfc-46f2-a324-fe405282c65d
+    '@type': cim:Terminal
+    cim:Terminal.ConnectivityNode:
+      '@id': urn:uuid:e86747ef-9dd7-4d36-9805-87ed6c5c62ef
+    cim:Terminal.ConductingEquipment:
+      '@id': urn:uuid:b7949224-9031-4365-a891-ffcdac3efcf7
+    cim:IdentifiedObject.mRID: b390442a-1dfc-46f2-a324-fe405282c65d
+  - '@id': urn:uuid:182198a6-7817-45bc-be6f-d67fe34c1d95
+    '@type': cim:VoltageLevel
+    cim:VoltageLevel.BaseVoltage:
+      '@id': urn:uuid:45b9413e-a116-4952-8cf8-aeb4b2e53348
+    cim:VoltageLevel.Substation:
+      '@id': urn:uuid:e5f75ac7-664f-40c4-aded-3e8133e0e727
+    cim:IdentifiedObject.mRID: 182198a6-7817-45bc-be6f-d67fe34c1d95
+    cim:IdentifiedObject.name: 'VL4 Onderstation 10 kV'
+  - '@id': urn:uuid:e86747ef-9dd7-4d36-9805-87ed6c5c62ef
+    '@type': cim:ConnectivityNode
+    cim:ConnectivityNode.ConnectivityNodeContainer:
+      '@id': urn:uuid:182198a6-7817-45bc-be6f-d67fe34c1d95
+    cim:IdentifiedObject.mRID: e86747ef-9dd7-4d36-9805-87ed6c5c62ef
+  # --- cim:PowerTransformer (2) ----------------------------------------------
+  - '@id': urn:uuid:a5b57c56-a824-411c-b0b9-db68bb2a9fe6
+    '@type': cim:PowerTransformer
+    cim:Equipment.EquipmentContainer:
+      '@id': urn:uuid:e5f75ac7-664f-40c4-aded-3e8133e0e727
+    cim:IdentifiedObject.mRID: a5b57c56-a824-411c-b0b9-db68bb2a9fe6
+    cim:IdentifiedObject.name: 'PT2'
+  # --- cim:PowerTransformerEnd (2-1) -----------------------------------------
+  - '@id': urn:uuid:4b29e775-5191-4c14-a952-098951ae85b4
+    '@type': cim:PowerTransformerEnd
+    cim:PowerTransformerEnd.PowerTransformer:
+      '@id': urn:uuid:a5b57c56-a824-411c-b0b9-db68bb2a9fe6
+    cim:TransformerEnd.endNumber: 1
+    cim:TransformerEnd.Terminal:
+      '@id': urn:uuid:328dc89d-96b1-4d51-912b-69c610b1a2ea
+    cim:IdentifiedObject.mRID: 4b29e775-5191-4c14-a952-098951ae85b4
+    cim:IdentifiedObject.name: 'PTE1'
+  - '@id': urn:uuid:328dc89d-96b1-4d51-912b-69c610b1a2ea
+    '@type': cim:Terminal
+    cim:Terminal.ConnectivityNode:
+      '@id': urn:uuid:c8b0e0d9-23ac-4a79-aff7-1e153b84e985
+    cim:Terminal.ConductingEquipment:
+      '@id': urn:uuid:a5b57c56-a824-411c-b0b9-db68bb2a9fe6
+    cim:IdentifiedObject.mRID: 328dc89d-96b1-4d51-912b-69c610b1a2ea
+  # --- cim:PowerTransformerEnd (2-2) -----------------------------------------
+  - '@id': urn:uuid:989f8b7e-2612-4968-8e44-3b7add532dc3
+    '@type': cim:PowerTransformerEnd
+    cim:PowerTransformerEnd.PowerTransformer:
+      '@id': urn:uuid:a5b57c56-a824-411c-b0b9-db68bb2a9fe6
+    cim:TransformerEnd.endNumber: 2
+    cim:TransformerEnd.Terminal:
+      '@id': urn:uuid:af479e25-2afe-4410-965d-f6cec798a3e8
+    cim:IdentifiedObject.mRID: 989f8b7e-2612-4968-8e44-3b7add532dc3
+    cim:IdentifiedObject.name: 'PTE2'
+  - '@id': urn:uuid:af479e25-2afe-4410-965d-f6cec798a3e8
+    '@type': cim:Terminal
+    cim:Terminal.ConnectivityNode:
+      '@id': urn:uuid:69791751-35fa-45c9-b111-ae2fe5e4ca51
+    cim:Terminal.ConductingEquipment:
+      '@id': urn:uuid:a5b57c56-a824-411c-b0b9-db68bb2a9fe6
+    cim:IdentifiedObject.mRID: af479e25-2afe-4410-965d-f6cec798a3e8
+  - '@id': urn:uuid:2a825e01-93f9-4f71-9860-952ed94a2693
+    '@type': cim:VoltageLevel
+    cim:VoltageLevel.BaseVoltage:
+      '@id': urn:uuid:45b9413e-a116-4952-8cf8-aeb4b2e53348
+    cim:VoltageLevel.Substation:
+      '@id': urn:uuid:e5f75ac7-664f-40c4-aded-3e8133e0e727
+    cim:IdentifiedObject.mRID: 2a825e01-93f9-4f71-9860-952ed94a2693
+    cim:IdentifiedObject.name: 'VL5 Onderstation 10 kV'
+  - '@id': urn:uuid:69791751-35fa-45c9-b111-ae2fe5e4ca51
+    '@type': cim:ConnectivityNode
+    cim:ConnectivityNode.ConnectivityNodeContainer:
+      '@id': urn:uuid:2a825e01-93f9-4f71-9860-952ed94a2693
+    cim:IdentifiedObject.mRID: 69791751-35fa-45c9-b111-ae2fe5e4ca51
+  # --- cim:PowerTransformer (3) ----------------------------------------------
+  - '@id': urn:uuid:f3695f11-3219-4a5a-9ae0-1fc6e815efcf
+    '@type': cim:PowerTransformer
+    cim:Equipment.EquipmentContainer:
+      '@id': urn:uuid:e5f75ac7-664f-40c4-aded-3e8133e0e727
+    cim:IdentifiedObject.mRID: f3695f11-3219-4a5a-9ae0-1fc6e815efcf
+    cim:IdentifiedObject.name: 'PT3'
+  # --- cim:PowerTransformerEnd (3-1) -----------------------------------------
+  - '@id': urn:uuid:81dd56bf-4cb0-47b0-bdcc-09dc0b969602
+    '@type': cim:PowerTransformerEnd
+    cim:PowerTransformerEnd.PowerTransformer:
+      '@id': urn:uuid:f3695f11-3219-4a5a-9ae0-1fc6e815efcf
+    cim:TransformerEnd.endNumber: 1
+    cim:TransformerEnd.Terminal:
+      '@id': urn:uuid:46643a2d-9e57-484b-bd01-e5c335668d66
+    cim:IdentifiedObject.mRID: 81dd56bf-4cb0-47b0-bdcc-09dc0b969602
+    cim:IdentifiedObject.name: 'PTE1'
+  - '@id': urn:uuid:46643a2d-9e57-484b-bd01-e5c335668d66
+    '@type': cim:Terminal
+    cim:Terminal.ConnectivityNode:
+      '@id': urn:uuid:0d7aacf3-552c-4d81-95ec-de36b40ff945
+    cim:Terminal.ConductingEquipment:
+      '@id': urn:uuid:f3695f11-3219-4a5a-9ae0-1fc6e815efcf
+    cim:IdentifiedObject.mRID: 46643a2d-9e57-484b-bd01-e5c335668d66
+  # --- cim:PowerTransformerEnd (3-2) -----------------------------------------
+  - '@id': urn:uuid:b1f7166c-05d3-40d7-8854-ac8f6381c40b
+    '@type': cim:PowerTransformerEnd
+    cim:PowerTransformerEnd.PowerTransformer:
+      '@id': urn:uuid:f3695f11-3219-4a5a-9ae0-1fc6e815efcf
+    cim:TransformerEnd.endNumber: 2
+    cim:TransformerEnd.Terminal:
+      '@id': urn:uuid:8feb418f-87b5-4454-ab3b-d38b4d7a1839
+    cim:IdentifiedObject.mRID: b1f7166c-05d3-40d7-8854-ac8f6381c40b
+    cim:IdentifiedObject.name: 'PTE2'
+  - '@id': urn:uuid:8feb418f-87b5-4454-ab3b-d38b4d7a1839
+    '@type': cim:Terminal
+    cim:Terminal.ConnectivityNode:
+      '@id': urn:uuid:7dd01200-447e-4795-b59a-9382ece9508b
+    cim:Terminal.ConductingEquipment:
+      '@id': urn:uuid:f3695f11-3219-4a5a-9ae0-1fc6e815efcf
+    cim:IdentifiedObject.mRID: 8feb418f-87b5-4454-ab3b-d38b4d7a1839
+  - '@id': urn:uuid:ecc6b23e-78dd-47dd-9fe7-1d5c7faf31c8
+    '@type': cim:VoltageLevel
+    cim:VoltageLevel.BaseVoltage:
+      '@id': urn:uuid:45b9413e-a116-4952-8cf8-aeb4b2e53348
+    cim:VoltageLevel.Substation:
+      '@id': urn:uuid:e5f75ac7-664f-40c4-aded-3e8133e0e727
+    cim:IdentifiedObject.mRID: ecc6b23e-78dd-47dd-9fe7-1d5c7faf31c8
+    cim:IdentifiedObject.name: 'VL6 Onderstation 10 kV'
+  - '@id': urn:uuid:7dd01200-447e-4795-b59a-9382ece9508b
+    '@type': cim:ConnectivityNode
+    cim:ConnectivityNode.ConnectivityNodeContainer:
+      '@id': urn:uuid:ecc6b23e-78dd-47dd-9fe7-1d5c7faf31c8
+    cim:IdentifiedObject.mRID: 7dd01200-447e-4795-b59a-9382ece9508b
+  # --- cim:ActivePowerLimit (1) ----------------------------------------------
+  - '@id': urn:uuid:c149afa4-8afd-4605-8acd-b021b07ce6db
+    '@type': cim:ActivePowerLimit
+    cim:ActivePowerLimit.value:
+      '@id': urn:uuid:6c1e78d3-65b3-4fdf-83f5-53f84cb91bae
+    nl:OperationalLimit.positiveFlowIn: false
+    cim:OperationalLimit.LimitDependencyModel:
+      - '@id': urn:uuid:33b8f266-9d7f-43dc-bb6c-5a4d1acd1325
+    cim:IdentifiedObject.mRID: c149afa4-8afd-4605-8acd-b021b07ce6db
+    cim:IdentifiedObject.name: 'Aanwezige transportcapaciteit (grid security n-1) (afname)'
+  - '@id': urn:uuid:6c1e78d3-65b3-4fdf-83f5-53f84cb91bae
+    '@type': cim:ActivePower
+    cim:ActivePower.multiplier:
+      '@id': cim:UnitMultiplier.M
+    cim:ActivePower.unit:
+      '@id': cim:UnitSymbol.W
+    cim:ActivePower.value:
+      '@value': 80.0
+      '@type': xsd:float
+  - '@id': urn:uuid:78575ca6-56f3-4889-884b-db02c8a16893
+    '@type': cim:ActivePowerLimit
+    cim:ActivePowerLimit.value:
+      '@id': urn:uuid:fb79cf05-09fb-4b99-844e-b876f85335b3
+    nl:OperationalLimit.positiveFlowIn: true
+    cim:OperationalLimit.LimitDependencyModel:
+      - '@id': urn:uuid:33b8f266-9d7f-43dc-bb6c-5a4d1acd1325
+    cim:IdentifiedObject.mRID: 78575ca6-56f3-4889-884b-db02c8a16893
+    cim:IdentifiedObject.name: 'Aanwezige transportcapaciteit (grid security n-1) (invoeding)'
+  - '@id': urn:uuid:fb79cf05-09fb-4b99-844e-b876f85335b3
+    '@type': cim:ActivePower
+    cim:ActivePower.multiplier:
+      '@id': cim:UnitMultiplier.M
+    cim:ActivePower.unit:
+      '@id': cim:UnitSymbol.W
+    cim:ActivePower.value:
+      '@value': 100.0
+      '@type': xsd:float
+  # --- cim:SeriesEquipmentDependentLimit -------------------------------------
+  - '@id': urn:uuid:33b8f266-9d7f-43dc-bb6c-5a4d1acd1325
+    '@type': cim:SeriesEquipmentDependentLimit
+    cim:IdentifiedObject.mRID: 33b8f266-9d7f-43dc-bb6c-5a4d1acd1325
+    cim:IdentifiedObject.name: 'PT1 & PT2 (grid security n-1)'
+  - '@id': urn:uuid:eae3cee2-f5c2-4dd5-8e02-512258129b6d
+    '@type': cim:EquipmentLimitSeriesComponent
+    cim:EquipmentLimitSeriesComponent.SeriesEquipmentDependentLimit:
+      '@id': urn:uuid:33b8f266-9d7f-43dc-bb6c-5a4d1acd1325
+    cim:EquipmentLimitSeriesComponent.Equipment:
+      '@id': urn:uuid:b7949224-9031-4365-a891-ffcdac3efcf7
+    nl:EquipmentLimitSeriesComponent.Terminal:
+      '@id': urn:uuid:af479e25-2afe-4410-965d-f6cec798a3e8
+    cim:IdentifiedObject.mRID: eae3cee2-f5c2-4dd5-8e02-512258129b6d
+    cim:IdentifiedObject.name: 'PT1'
+  - '@id': urn:uuid:20960b21-5dda-482d-ab67-a564b99099a6
+    '@type': cim:EquipmentLimitSeriesComponent
+    cim:EquipmentLimitSeriesComponent.SeriesEquipmentDependentLimit:
+      '@id': urn:uuid:33b8f266-9d7f-43dc-bb6c-5a4d1acd1325
+    cim:EquipmentLimitSeriesComponent.Equipment:
+      '@id': urn:uuid:a5b57c56-a824-411c-b0b9-db68bb2a9fe6
+    nl:EquipmentLimitSeriesComponent.Terminal:
+      '@id': urn:uuid:b390442a-1dfc-46f2-a324-fe405282c65d
+    cim:IdentifiedObject.mRID: 20960b21-5dda-482d-ab67-a564b99099a6
+    cim:IdentifiedObject.name: 'PT2'
+  # --- cim:ActivePowerLimit --------------------------------------------------
+  - '@id': urn:uuid:b9076cfb-55e5-4f24-bc1f-a27ee2ee4fe2
+    '@type': cim:OperationalLimitSet
+    cim:OperationalLimitSet.Equipment:
+      '@id': urn:uuid:f3695f11-3219-4a5a-9ae0-1fc6e815efcf
+    cim:OperationalLimitSet.Terminal:
+      '@id': urn:uuid:8feb418f-87b5-4454-ab3b-d38b4d7a1839
+    cim:IdentifiedObject.mRID: b9076cfb-55e5-4f24-bc1f-a27ee2ee4fe2
+    cim:IdentifiedObject.name: 'PT3 aanwezige transportcapaciteit'
+  - '@id': urn:uuid:3b1cb159-7256-4918-96b7-98d0034233cc
+    '@type': cim:ActivePowerLimit
+    cim:ActivePowerLimit.value:
+      '@id': urn:uuid:ed9c33ac-4cb5-4740-869a-71b5bc0b7f9c
+    cim:OperationalLimit.OperationalLimitSet:
+      '@id': urn:uuid:b9076cfb-55e5-4f24-bc1f-a27ee2ee4fe2
+    nl:OperationalLimit.positiveFlowIn: false
+    cim:IdentifiedObject.mRID: 3b1cb159-7256-4918-96b7-98d0034233cc
+    cim:IdentifiedObject.name: 'Aanwezige transportcapaciteit (afname)'
+  - '@id': urn:uuid:ed9c33ac-4cb5-4740-869a-71b5bc0b7f9c
+    '@type': cim:ActivePower
+    cim:ActivePower.multiplier:
+      '@id': cim:UnitMultiplier.M
+    cim:ActivePower.unit:
+      '@id': cim:UnitSymbol.W
+    cim:ActivePower.value:
+      '@value': 75
+      '@type': xsd:float
+  - '@id': urn:uuid:9972a0d3-a275-475e-ad2b-15120ced2a45
+    '@type': cim:ActivePowerLimit
+    cim:ActivePowerLimit.value:
+      '@id': urn:uuid:b54e1399-fcde-4e6b-b164-d90111f12940
+    cim:OperationalLimit.OperationalLimitSet:
+      '@id': urn:uuid:b9076cfb-55e5-4f24-bc1f-a27ee2ee4fe2
+    nl:OperationalLimit.positiveFlowIn: true
+    cim:IdentifiedObject.mRID: 9972a0d3-a275-475e-ad2b-15120ced2a45
+    cim:IdentifiedObject.name: 'Aanwezige transportcapaciteit (invoeding)'
+  - '@id': urn:uuid:b54e1399-fcde-4e6b-b164-d90111f12940
+    '@type': cim:ActivePower
+    cim:ActivePower.multiplier:
+      '@id': cim:UnitMultiplier.M
+    cim:ActivePower.unit:
+      '@id': cim:UnitSymbol.W
+    cim:ActivePower.value:
+      '@value': 95
+      '@type': xsd:float
+  # --- cim:Contingency -------------------------------------------------------
+  - '@id': urn:uuid:bf152016-1d5b-4192-a324-456a2f57a41e
+    '@type': cim:Contingency
+    cim:Contingency.mustStudy: true
+    cim:IdentifiedObject.mRID: bf152016-1d5b-4192-a324-456a2f57a41e
+    cim:IdentifiedObject.name: 'Knelpunt Onderstation VL4 & VL5 10 kV'
+  - '@id': urn:uuid:2b115331-fca3-4dea-90d5-d6dab38091ba
+    '@type': cim:ContingencyEquipment
+    cim:ContingencyEquipment.Equipment:
+      '@id': urn:uuid:b7949224-9031-4365-a891-ffcdac3efcf7
+    cim:ContingencyElement.Contingency:
+      '@id': urn:uuid:bf152016-1d5b-4192-a324-456a2f57a41e
+    cim:IdentifiedObject.mRID: 2b115331-fca3-4dea-90d5-d6dab38091ba
+  - '@id': urn:uuid:5a24efd5-3896-48fd-a0e1-5eee1d66fc74
+    '@type': cim:ContingencyEquipment
+    cim:ContingencyEquipment.Equipment:
+      '@id': urn:uuid:b7949224-9031-4365-a891-ffcdac3efcf7
+    cim:ContingencyElement.Contingency:
+      '@id': urn:uuid:bf152016-1d5b-4192-a324-456a2f57a41e
+    cim:IdentifiedObject.mRID: 5a24efd5-3896-48fd-a0e1-5eee1d66fc74
+  - '@id': urn:uuid:d8017ae4-bbcb-4994-b162-dfbb1e70d7d2
+    '@type': cim:ContingencyEquipment
+    cim:ContingencyEquipment.Equipment:
+      '@id': urn:uuid:a5b57c56-a824-411c-b0b9-db68bb2a9fe6
+    cim:ContingencyElement.Contingency:
+      '@id': urn:uuid:bf152016-1d5b-4192-a324-456a2f57a41e
+    cim:IdentifiedObject.mRID: d8017ae4-bbcb-4994-b162-dfbb1e70d7d2
+  # --- cim:UsagePoint ----------------------------------------------------
+  - '@id': urn:uuid:389af6e3-a866-4bf8-8aca-e89e9483a292
+    '@type': cim:EnergyConsumer
+    cim:Equipment.EquipmentContainer:
+      '@id': urn:uuid:182198a6-7817-45bc-be6f-d67fe34c1d95
+    cim:IdentifiedObject.mRID: 389af6e3-a866-4bf8-8aca-e89e9483a292
+    cim:IdentifiedObject.name: 'VL4 - 1234AA/1'
+  - '@id': urn:uuid:f45aab76-75c6-4b63-8806-39660181e86e
+    '@type': cim:Terminal
+    cim:Terminal.ConductingEquipment:
+      '@id': urn:uuid:389af6e3-a866-4bf8-8aca-e89e9483a292
+    cim:IdentifiedObject.mRID: f45aab76-75c6-4b63-8806-39660181e86e
+  - '@id': urn:uuid:b6260b0f-dd00-4816-9b74-7e01afdec33f
+    '@type': cim:UsagePoint
+    cim:UsagePoint.Equipments:
+      - '@id': urn:uuid:389af6e3-a866-4bf8-8aca-e89e9483a292
+    cim:IdentifiedObject.mRID: b6260b0f-dd00-4816-9b74-7e01afdec33f
+    nl:IdentifiedObject.europeanArticleNumberEAN: '800012345678901004'
+    cim:IdentifiedObject.name: '1234AA/1'
+  # --- cim:Substation --------------------------------------------------------
+  - '@id': urn:uuid:1b8c737c-1f2c-53d1-8c09-9c1198549d94
+    '@type': cim:Substation
+    cim:Substation.Region:
+      '@id': urn:uuid:0a1d2b08-6e92-489b-9161-b3eec2aa479f
+    cim:IdentifiedObject.mRID: 1b8c737c-1f2c-53d1-8c09-9c1198549d94
+    cim:IdentifiedObject.name: SS2 Regelstation
+  # --- cim:PowerTransformer --------------------------------------------------
+  - '@id': urn:uuid:1e065300-729b-5afc-a26f-1b48c6fe9628
+    '@type': cim:PowerTransformer
+    cim:Equipment.EquipmentContainer:
+      '@id': urn:uuid:1b8c737c-1f2c-53d1-8c09-9c1198549d94
+    cim:IdentifiedObject.mRID: 1e065300-729b-5afc-a26f-1b48c6fe9628
+    cim:IdentifiedObject.name: PT1
+  # --- cim:PowerTransformerEnd (1) -------------------------------------------
+  - '@id': urn:uuid:27f4da3a-ad54-5249-b615-ee3023ca3253
+    '@type': cim:PowerTransformerEnd
+    cim:PowerTransformerEnd.PowerTransformer:
+      '@id': urn:uuid:1e065300-729b-5afc-a26f-1b48c6fe9628
+    cim:TransformerEnd.endNumber: 1
+    cim:TransformerEnd.Terminal:
+      '@id': urn:uuid:0daa99b8-0d47-5c3c-a5cd-0ac855422a6b
+    cim:IdentifiedObject.mRID: 27f4da3a-ad54-5249-b615-ee3023ca3253
+  # --- cim:VoltageLevel (1) --------------------------------------------------
+  - '@id': urn:uuid:c126093c-f707-4a8f-8854-f5e0dcfe8af9
+    '@type': cim:VoltageLevel
+    cim:VoltageLevel.BaseVoltage:
+      '@id': urn:uuid:45b9413e-a116-4952-8cf8-aeb4b2e53348
+    cim:VoltageLevel.Substation:
+      '@id': urn:uuid:1b8c737c-1f2c-53d1-8c09-9c1198549d94
+    cim:IdentifiedObject.mRID: c126093c-f707-4a8f-8854-f5e0dcfe8af9
+    cim:IdentifiedObject.name: 'VL1 Regelstation 10 kV'
+  # --- cim:ConnectivityNode (1) ----------------------------------------------
+  - '@id': urn:uuid:2b0fce19-9d58-4389-b726-1714af6d68a6
+    '@type': cim:ConnectivityNode
+    cim:ConnectivityNode.ConnectivityNodeContainer:
+      '@id': urn:uuid:c126093c-f707-4a8f-8854-f5e0dcfe8af9
+    cim:IdentifiedObject.mRID: 2b0fce19-9d58-4389-b726-1714af6d68a6
+  # --- cim:Terminal (1) ------------------------------------------------------
+  - '@id': urn:uuid:0daa99b8-0d47-5c3c-a5cd-0ac855422a6b
+    '@type': cim:Terminal
+    cim:Terminal.ConductingEquipment:
+      '@id': urn:uuid:1e065300-729b-5afc-a26f-1b48c6fe9628
+    cim:Terminal.ConnectivityNode:
+      '@id': urn:uuid:2b0fce19-9d58-4389-b726-1714af6d68a6
+    cim:IdentifiedObject.mRID: 0daa99b8-0d47-5c3c-a5cd-0ac855422a6b
+  # --- cim:PowerTransformerEnd (2) -------------------------------------------
+  - '@id': urn:uuid:fcdc77c1-de85-5381-a5aa-feaf4c5d8380
+    '@type': cim:PowerTransformerEnd
+    cim:PowerTransformerEnd.PowerTransformer:
+      '@id': urn:uuid:1e065300-729b-5afc-a26f-1b48c6fe9628
+    cim:TransformerEnd.endNumber: 2
+    cim:TransformerEnd.Terminal:
+      '@id': urn:uuid:51c32041-d9d1-54fc-a435-1d15ce4a5937
+    cim:IdentifiedObject.mRID: fcdc77c1-de85-5381-a5aa-feaf4c5d8380
+  # --- cim:VoltageLevel (2) --------------------------------------------------
+  - '@id': urn:uuid:86acd3ae-6bc5-55e7-86a9-3153686a6b63
+    '@type': cim:VoltageLevel
+    cim:VoltageLevel.BaseVoltage:
+      '@id': urn:uuid:45b9413e-a116-4952-8cf8-aeb4b2e53348
+    cim:VoltageLevel.Substation:
+      '@id': urn:uuid:1b8c737c-1f2c-53d1-8c09-9c1198549d94
+    cim:IdentifiedObject.mRID: 86acd3ae-6bc5-55e7-86a9-3153686a6b63
+    cim:IdentifiedObject.name: 'VL2 Regelstation 10 kV'
+  # --- cim:ConnectivityNode (2) ----------------------------------------------
+  - '@id': urn:uuid:1753f6b0-2d29-5ba6-9138-9d983e51eb0b
+    '@type': cim:ConnectivityNode
+    cim:ConnectivityNode.ConnectivityNodeContainer:
+      '@id': urn:uuid:86acd3ae-6bc5-55e7-86a9-3153686a6b63
+    cim:IdentifiedObject.mRID: 1753f6b0-2d29-5ba6-9138-9d983e51eb0b
+  # --- cim:Terminal (2) ------------------------------------------------------
+  - '@id': urn:uuid:51c32041-d9d1-54fc-a435-1d15ce4a5937
+    '@type': cim:Terminal
+    cim:Terminal.ConnectivityNode:
+      '@id': urn:uuid:1753f6b0-2d29-5ba6-9138-9d983e51eb0b
+    cim:Terminal.ConductingEquipment:
+      '@id': urn:uuid:1e065300-729b-5afc-a26f-1b48c6fe9628
+    cim:IdentifiedObject.mRID: 51c32041-d9d1-54fc-a435-1d15ce4a5937
+  # --- cim:ActivePowerLimit (1) ----------------------------------------------
+  - '@id': urn:uuid:9974d869-743b-5035-8851-ae40c6aa64e3
+    '@type': cim:ActivePowerLimit
+    cim:ActivePowerLimit.value:
+      '@id': urn:uuid:3e36a318-c72d-5512-b509-ce1719202b57
+    cim:OperationalLimit.OperationalLimitSet:
+      '@id': urn:uuid:a49814fc-f95f-53ac-a5ab-85c02b5c3e72
+    cim:IdentifiedObject.mRID: 9974d869-743b-5035-8851-ae40c6aa64e3
+    cim:IdentifiedObject.name: Aanwezige transportcapaciteit (afname)
+    nl:OperationalLimit.positiveFlowIn: false
+  - '@id': urn:uuid:3e36a318-c72d-5512-b509-ce1719202b57
+    '@type': cim:ActivePower
+    cim:ActivePower.multiplier:
+      '@id': cim:UnitMultiplier.M
+    cim:ActivePower.unit:
+      '@id': cim:UnitSymbol.W
+    cim:ActivePower.value:
+      '@value': 50
+      '@type': xsd:float
+  # --- cim:ActivePowerLimit (2) ----------------------------------------------
+  - '@id': urn:uuid:c5553ef4-44df-55c5-88cd-4c987793464b
+    '@type': cim:ActivePowerLimit
+    cim:ActivePowerLimit.value:
+      '@id': urn:uuid:31791955-3fd9-5b8e-848a-d0cee4d2b76e
+    cim:OperationalLimit.OperationalLimitSet:
+      '@id': urn:uuid:a49814fc-f95f-53ac-a5ab-85c02b5c3e72
+    cim:IdentifiedObject.mRID: c5553ef4-44df-55c5-88cd-4c987793464b
+    cim:IdentifiedObject.name: Aanwezige transportcapaciteit (invoeding)
+    nl:OperationalLimit.positiveFlowIn: true
+  - '@id': urn:uuid:31791955-3fd9-5b8e-848a-d0cee4d2b76e
+    '@type': cim:ActivePower
+    cim:ActivePower.multiplier:
+      '@id': cim:UnitMultiplier.M
+    cim:ActivePower.unit:
+      '@id': cim:UnitSymbol.W
+    cim:ActivePower.value:
+      '@value': 60
+      '@type': xsd:float
+  # --- cim:OperationalLimitSet ----------------------------------------------
+  - '@id': urn:uuid:a49814fc-f95f-53ac-a5ab-85c02b5c3e72
+    '@type': cim:OperationalLimitSet
+    cim:OperationalLimitSet.Equipment:
+      '@id': urn:uuid:1e065300-729b-5afc-a26f-1b48c6fe9628
+    cim:OperationalLimitSet.Terminal:
+      '@id': urn:uuid:51c32041-d9d1-54fc-a435-1d15ce4a5937
+    cim:IdentifiedObject.mRID: a49814fc-f95f-53ac-a5ab-85c02b5c3e72
+  # --- cim:ACLineSegment (1) -------------------------------------------------
+  - '@id': urn:uuid:cbf99c09-f074-4b61-81b8-30b3c0befa2d
+    '@type': cim:Line
+    cim:Line.Region:
+      '@id': urn:uuid:0a1d2b08-6e92-489b-9161-b3eec2aa479f
+    cim:IdentifiedObject.mRID: cbf99c09-f074-4b61-81b8-30b3c0befa2d
+    cim:IdentifiedObject.name: 'L1 Onderstation'
+  - '@id': urn:uuid:cb24ec49-e442-438e-b448-e7c56ed047b4
+    '@type': cim:ACLineSegment
+    cim:Equipment.EquipmentContainer:
+      '@id': urn:uuid:cbf99c09-f074-4b61-81b8-30b3c0befa2d
+    cim:Equipment.aggregate: true
+    cim:IdentifiedObject.mRID: cb24ec49-e442-438e-b448-e7c56ed047b4
+    cim:IdentifiedObject.name: 'ACL1 Onderstation'
+  - '@id': urn:uuid:b32bb393-8384-4cac-b428-25934af3afea
+    '@type': cim:Terminal
+    cim:Terminal.ConductingEquipment:
+      '@id': urn:uuid:cb24ec49-e442-438e-b448-e7c56ed047b4
+    cim:IdentifiedObject.mRID: b32bb393-8384-4cac-b428-25934af3afea
+  - '@id': urn:uuid:93275357-e106-4173-907f-f42dd38f43a9
+    '@type': cim:Terminal
+    cim:Terminal.ConductingEquipment:
+      '@id': urn:uuid:cb24ec49-e442-438e-b448-e7c56ed047b4
+    cim:IdentifiedObject.mRID: 93275357-e106-4173-907f-f42dd38f43a9
+  # --- cim:ACLineSegment (2) -------------------------------------------------
+  - '@id': urn:uuid:bfb989f9-8810-4546-bfd5-7b2326577865
+    '@type': cim:Line
+    cim:Line.Region:
+      '@id': urn:uuid:0a1d2b08-6e92-489b-9161-b3eec2aa479f
+    cim:IdentifiedObject.mRID: bfb989f9-8810-4546-bfd5-7b2326577865
+    cim:IdentifiedObject.name: L2 Onderstation
+  - '@id': urn:uuid:1d65c75c-34ff-4c30-8d96-eb056827ea1c
+    '@type': cim:ACLineSegment
+    cim:Equipment.EquipmentContainer:
+      '@id': urn:uuid:bfb989f9-8810-4546-bfd5-7b2326577865
+    cim:Equipment.aggregate: true
+    cim:IdentifiedObject.mRID: 1d65c75c-34ff-4c30-8d96-eb056827ea1c
+    cim:IdentifiedObject.name: 'ACL2 Onderstation'
+  - '@id': urn:uuid:ebaa3863-b904-4d69-b2cd-9b380fbec051
+    '@type': cim:Terminal
+    cim:Terminal.ConductingEquipment:
+      '@id': urn:uuid:1d65c75c-34ff-4c30-8d96-eb056827ea1c
+    cim:IdentifiedObject.mRID: ebaa3863-b904-4d69-b2cd-9b380fbec051
+  - '@id': urn:uuid:6a20468c-676c-4d84-b63a-1999efa0da58
+    '@type': cim:Terminal
+    cim:Terminal.ConductingEquipment:
+      '@id': urn:uuid:1d65c75c-34ff-4c30-8d96-eb056827ea1c
+    cim:IdentifiedObject.mRID: 6a20468c-676c-4d84-b63a-1999efa0da58
+  # --- cim:Contingency (ACLineSegment) ---------------------------------------
+  - '@id': urn:uuid:9e6b0e3f-e3d4-4dcf-9214-f30198c65ed8
+    '@type': cim:Contingency
+    cim:Contingency.mustStudy: true
+    cim:IdentifiedObject.mRID: 9e6b0e3f-e3d4-4dcf-9214-f30198c65ed8
+    cim:IdentifiedObject.name: 'Knelpunt L1 & L2'
+  # --- cim:ContingencyEquipment (ACL1) ---------------------------------------
+  - '@id': urn:uuid:9771cccf-417a-40ed-88c8-2ede47266f39
+    '@type': cim:ContingencyEquipment
+    cim:ContingencyEquipment.Equipment:
+      '@id': urn:uuid:cb24ec49-e442-438e-b448-e7c56ed047b4
+    cim:ContingencyElement.Contingency:
+      '@id': urn:uuid:9e6b0e3f-e3d4-4dcf-9214-f30198c65ed8
+    cim:IdentifiedObject.mRID: 9771cccf-417a-40ed-88c8-2ede47266f39
+  # --- cim:ContingencyEquipment (ACL2) ---------------------------------------
+  - '@id': urn:uuid:51a7166b-b9f8-4eef-b949-c694429dba36
+    '@type': cim:ContingencyEquipment
+    cim:ContingencyEquipment.Equipment:
+      '@id': urn:uuid:1d65c75c-34ff-4c30-8d96-eb056827ea1c
+    cim:ContingencyElement.Contingency:
+      '@id': urn:uuid:9e6b0e3f-e3d4-4dcf-9214-f30198c65ed8
+    cim:IdentifiedObject.mRID: 51a7166b-b9f8-4eef-b949-c694429dba36

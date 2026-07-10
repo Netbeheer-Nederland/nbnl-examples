@@ -1,0 +1,13 @@
+# Netbeheer Nederland Examples
+
+## Visualise generated JSON-LD
+
+[source,bash]
+----
+#!/bin/bash
+
+rm *.example.yml.jsonld
+ls *.yml|while read file; do gen-linkml-profile convert "$file" --out "${file%.yml}.jsonld"; done;
+
+gen-linkml-profile tree *.jsonld --root-id "$@" --depth 3|less
+----
