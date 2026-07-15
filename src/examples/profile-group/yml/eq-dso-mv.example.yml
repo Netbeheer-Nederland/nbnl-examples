@@ -12,6 +12,8 @@
     '@type': cim:PowerTransformer
     cim:Equipment.EquipmentContainer:
       '@id': urn:uuid:e5f75ac7-664f-40c4-aded-3e8133e0e727
+    cim:PowerSystemResource.ReportingGroup:
+      - '@id': urn:uuid:36135063-70dc-4f9e-aa25-b30f4f99ccb9
     cim:IdentifiedObject.mRID: b7949224-9031-4365-a891-ffcdac3efcf7
     cim:IdentifiedObject.name: 'PT1'
   # --- cim:PowerTransformerEnd (1-1) -----------------------------------------
@@ -66,6 +68,8 @@
     '@type': cim:PowerTransformer
     cim:Equipment.EquipmentContainer:
       '@id': urn:uuid:e5f75ac7-664f-40c4-aded-3e8133e0e727
+    cim:PowerSystemResource.ReportingGroup:
+      - '@id': urn:uuid:36135063-70dc-4f9e-aa25-b30f4f99ccb9
     cim:IdentifiedObject.mRID: a5b57c56-a824-411c-b0b9-db68bb2a9fe6
     cim:IdentifiedObject.name: 'PT2'
   # --- cim:PowerTransformerEnd (2-1) -----------------------------------------
@@ -256,7 +260,7 @@
     cim:ActivePower.unit:
       '@id': cim:UnitSymbol.W
     cim:ActivePower.value:
-      '@value': 75
+      '@value': 75.0
       '@type': xsd:float
   - '@id': urn:uuid:9972a0d3-a275-475e-ad2b-15120ced2a45
     '@type': cim:ActivePowerLimit
@@ -274,7 +278,7 @@
     cim:ActivePower.unit:
       '@id': cim:UnitSymbol.W
     cim:ActivePower.value:
-      '@value': 95
+      '@value': 95.0
       '@type': xsd:float
   # --- cim:Contingency -------------------------------------------------------
   - '@id': urn:uuid:bf152016-1d5b-4192-a324-456a2f57a41e
@@ -417,7 +421,7 @@
     cim:ActivePower.unit:
       '@id': cim:UnitSymbol.W
     cim:ActivePower.value:
-      '@value': 50
+      '@value': 50.0
       '@type': xsd:float
   # --- cim:ActivePowerLimit (2) ----------------------------------------------
   - '@id': urn:uuid:c5553ef4-44df-55c5-88cd-4c987793464b
@@ -436,7 +440,7 @@
     cim:ActivePower.unit:
       '@id': cim:UnitSymbol.W
     cim:ActivePower.value:
-      '@value': 60
+      '@value': 60.0
       '@type': xsd:float
   # --- cim:OperationalLimitSet ----------------------------------------------
   - '@id': urn:uuid:a49814fc-f95f-53ac-a5ab-85c02b5c3e72
@@ -516,3 +520,8 @@
     cim:ContingencyElement.Contingency:
       '@id': urn:uuid:9e6b0e3f-e3d4-4dcf-9214-f30198c65ed8
     cim:IdentifiedObject.mRID: 51a7166b-b9f8-4eef-b949-c694429dba36
+  # --- cim:ReportingGroup ----------------------------------------------------
+  - '@id': urn:uuid:36135063-70dc-4f9e-aa25-b30f4f99ccb9
+    '@type': cim:ReportingGroup
+    cim:IdentifiedObject.mRID: 36135063-70dc-4f9e-aa25-b30f4f99ccb9
+    cim:IdentifiedObject.name: 'Q1 Queue (afname)'
