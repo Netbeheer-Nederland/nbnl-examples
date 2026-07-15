@@ -307,7 +307,7 @@
     cim:ContingencyElement.Contingency:
       '@id': urn:uuid:bf152016-1d5b-4192-a324-456a2f57a41e
     cim:IdentifiedObject.mRID: d8017ae4-bbcb-4994-b162-dfbb1e70d7d2
-  # --- cim:UsagePoint ----------------------------------------------------
+  # --- cim:UsagePoint (1) ----------------------------------------------------
   - '@id': urn:uuid:389af6e3-a866-4bf8-8aca-e89e9483a292
     '@type': cim:EnergyConsumer
     cim:Equipment.EquipmentContainer:
@@ -326,6 +326,25 @@
     cim:IdentifiedObject.mRID: b6260b0f-dd00-4816-9b74-7e01afdec33f
     nl:IdentifiedObject.europeanArticleNumberEAN: '800012345678901004'
     cim:IdentifiedObject.name: '1234AA/1'
+  # --- cim:UsagePoint (2) ----------------------------------------------------
+  - '@id': urn:uuid:a5dfce7b-2748-4390-8aee-bedf3641a9b8
+    '@type': cim:EnergyConsumer
+    cim:Equipment.EquipmentContainer:
+      '@id': urn:uuid:ecc6b23e-78dd-47dd-9fe7-1d5c7faf31c8
+    cim:IdentifiedObject.mRID: a5dfce7b-2748-4390-8aee-bedf3641a9b8
+    cim:IdentifiedObject.name: 'VL6 1234AB/1'
+  - '@id': urn:uuid:90181af6-3ce6-4a4e-877a-6da8851a17f2
+    '@type': cim:Terminal
+    cim:Terminal.ConductingEquipment:
+      '@id': urn:uuid:a5dfce7b-2748-4390-8aee-bedf3641a9b8
+    cim:IdentifiedObject.mRID: 90181af6-3ce6-4a4e-877a-6da8851a17f2
+  - '@id': urn:uuid:f1f84dd4-2065-4124-9549-f798638f871b
+    '@type': cim:UsagePoint
+    cim:UsagePoint.Equipments:
+      - '@id': urn:uuid:a5dfce7b-2748-4390-8aee-bedf3641a9b8
+    cim:IdentifiedObject.mRID: f1f84dd4-2065-4124-9549-f798638f871b
+    nl:IdentifiedObject.europeanArticleNumberEAN: '800012345678901005'
+    cim:IdentifiedObject.name: '1234AB/1'
   # --- cim:Substation --------------------------------------------------------
   - '@id': urn:uuid:1b8c737c-1f2c-53d1-8c09-9c1198549d94
     '@type': cim:Substation

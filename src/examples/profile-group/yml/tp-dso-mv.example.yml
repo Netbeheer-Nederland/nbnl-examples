@@ -35,3 +35,28 @@
       '@id': urn:uuid:6a6e6bb8-d3b5-418d-b722-134169e38bba
     cim:IdentifiedObject.mRID: 4cc91ddc-efdc-47eb-9d10-ea59bcd1beb9
     cim:IdentifiedObject.name: 'PTE-EC'
+  # --- cim:TopologicalNode (PTE2/ACL1) ---------------------------------------
+  - '@id': urn:uuid:80f76c0a-e7c5-41d9-8996-7022e3f5bd7a
+    '@type': cim:TopologicalNode
+    cim:TopologicalNode.Terminal:
+      - urn:uuid:8feb418f-87b5-4454-ab3b-d38b4d7a1839    # PT3/PTE2
+      - urn:uuid:b32bb393-8384-4cac-b428-25934af3afea    # ACL1
+      - urn:uuid:1d65c75c-34ff-4c30-8d96-eb056827ea1c    # ACL2
+    cim:IdentifiedObject.mRID: 80f76c0a-e7c5-41d9-8996-7022e3f5bd7a
+  # --- cim:TopologicalNode (ACL1/EC) -----------------------------------------
+  - '@id': urn:uuid:1866be0c-c691-4417-8c4b-e9d6f67cead3
+    '@type': cim:TopologicalNode
+    cim:TopologicalNode.Terminal:
+      - urn:uuid:93275357-e106-4173-907f-f42dd38f43a9
+      - urn:uuid:90181af6-3ce6-4a4e-877a-6da8851a17f2
+    cim:IdentifiedObject.mRID: 1866be0c-c691-4417-8c4b-e9d6f67cead3
+  # --- cim:BusNameMarker (PTE/ACL/EC) ---------------------------------------------
+  - '@id': urn:uuid:5c727ec2-4a9f-4a85-b5d2-b4cfff52c261
+    '@type': cim:BusNameMarker
+    cim:BusNameMarker.Terminal:
+      - urn:uuid:8feb418f-87b5-4454-ab3b-d38b4d7a1839    # PT3/PTE2
+      - urn:uuid:b32bb393-8384-4cac-b428-25934af3afea    # ACL1
+    cim:BusNameMarker.TopologicalNode:
+      '@id': urn:uuid:80f76c0a-e7c5-41d9-8996-7022e3f5bd7a
+    cim:IdentifiedObject.mRID: 5c727ec2-4a9f-4a85-b5d2-b4cfff52c261
+    cim:IdentifiedObject.name: 'PTE-ACL-EC'
