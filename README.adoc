@@ -1,6 +1,96 @@
-# Netbeheer Nederland Examples
+= Netbeheer-Nederland/nbnl-examples
+:toc:
+:toclevels: 2
 
-## Visualise generated JSON-LD
+The `nbnl-examples` repository provides reference implementations and test data
+for the https://modellen.netbeheernederland.nl/data-products/[Netbeheer
+Nederland (NBNL) Profile Group].
+
+The repository stores profile definitions as YAML and generates
+profile-compliant JSON-LD by using `gen-linkml-profile`. It contains complete
+implementations of the NBNL Profile Group together with representative data
+products that transform existing CSV or JSON source data into one or more NBNL
+profiles.
+
+== Purpose
+
+This repository:
+
+* provides complete examples of the NBNL Profile Group;
+* provides reusable test data for profile-based implementations;
+* demonstrates how data products transform existing CSV or JSON source data
+into one or more NBNL profiles.
+
+The repository always follows the latest published version of the NBNL Profile
+Group.
+
+== Repository Contents
+
+The repository contains two categories of examples.
+
+=== Profile Group Examples
+
+The Profile Group examples implement each profile in the NBNL Profile Group:
+
+* https://modellen.netbeheernederland.nl/nbnl-equipment/[Equipment]
+* https://modellen.netbeheernederland.nl/nbnl-asset/[Asset]
+* https://modellen.netbeheernederland.nl/nbnl-topology/[Topology]
+* https://modellen.netbeheernederland.nl/nbnl-geographical-location/[Geographical Location]
+* https://modellen.netbeheernederland.nl/nbnl-operation/[Operation]
+
+Together, these examples show the intended use of the individual profiles and
+the relationships between them.
+
+=== Data Product Examples
+
+The data product examples transform existing CSV or JSON source data into one
+or more NBNL Profile Group profiles by using reusable transformation templates.
+
+The repository contains implementations of the following data products:
+
+* Buurtnet
+* Capaciteitskaart
+* Netbewust Laden
+
+== Transformation Pipeline
+
+The repository stores the profile definitions as YAML.
+
+`gen-linkml-profile` transforms the YAML definitions into profile-compliant
+JSON-LD. The data product examples use reusable transformation templates to map
+CSV or JSON source data to one or more NBNL Profile Group profiles before
+generating the final JSON-LD output.
+
+== Getting Started
+
+Run all examples from the provided Docker environment.
+
+. Build or start the ghcr.io/netbeheer-nederland/build-dp:latest[Docker
+container]
+. Enter the container.
+. Open the directory of the example that you want to execute.
+. Follow the instructions in the `README.adoc` of that example.
+. Generate the JSON-LD output.
+
+The Docker container includes all required tooling, including
+`gen-linkml-profile`.
+
+== Repository Structure
+
+The repository organises each example in a separate directory. Every example
+contains its own `README.adoc` that describes:
+
+* the purpose of the example;
+* the input data;
+* the transformation templates;
+* the commands that generate the output;
+* the generated JSON-LD artefacts.
+
+== Visualise generated JSON-LD
+
+To visualise the generated JSON-LD, use `gen-linkml-profiler` to create an
+ascii-based tree. The example below is a small script to regenerate the JSON-LD
+files in the current directory and create a tree.
 
 [source,bash]
 ----
@@ -11,3 +101,12 @@ ls *.yml|while read file; do gen-linkml-profile convert "$file" --out "${file%.y
 
 gen-linkml-profile tree *.jsonld --root-id "$@" --depth 3|less
 ----
+
+== Contributing
+
+Contributions are welcome.
+
+Please open an issue or submit a pull request for bug fixes, improvements,
+additional examples or enhancements. Keep contributions compatible with the
+latest version of the NBNL Profile Group and ensure that the documented
+workflow reproduces the generated artefacts.
