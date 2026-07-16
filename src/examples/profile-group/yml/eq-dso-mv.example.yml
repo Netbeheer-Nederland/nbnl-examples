@@ -293,13 +293,6 @@
     cim:ContingencyElement.Contingency:
       '@id': urn:uuid:bf152016-1d5b-4192-a324-456a2f57a41e
     cim:IdentifiedObject.mRID: 2b115331-fca3-4dea-90d5-d6dab38091ba
-  - '@id': urn:uuid:5a24efd5-3896-48fd-a0e1-5eee1d66fc74
-    '@type': cim:ContingencyEquipment
-    cim:ContingencyEquipment.Equipment:
-      '@id': urn:uuid:b7949224-9031-4365-a891-ffcdac3efcf7
-    cim:ContingencyElement.Contingency:
-      '@id': urn:uuid:bf152016-1d5b-4192-a324-456a2f57a41e
-    cim:IdentifiedObject.mRID: 5a24efd5-3896-48fd-a0e1-5eee1d66fc74
   - '@id': urn:uuid:d8017ae4-bbcb-4994-b162-dfbb1e70d7d2
     '@type': cim:ContingencyEquipment
     cim:ContingencyEquipment.Equipment:

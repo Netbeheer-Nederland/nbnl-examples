@@ -2,93 +2,83 @@
 
 == Transmission System Operator
 
+=== SubGeographicalRegion
+
 [source,bash]
 ----
 [SubGeographicalRegion] Transmission System Operator B.V. (d8ce36c5)
 ├── IN
-│   └── [Substation] SS1 Onderstation (33e0e727)
+│   └── [Substation] SS1 Onderstation (33e0e727) <1>
 │       ├── IN
-│       │   ├── [PowerTransformer] PT1 (ac3efcf7) <1>
+│       │   ├── [PowerTransformer] PT1 (ac3efcf7) <2>
 │       │   │   ├── IN
-│       │   │   │   ├── [ContingencyEquipment] 1d66fc74 (1d66fc74)
 │       │   │   │   ├── [ContingencyEquipment] b38091ba (b38091ba)
 │       │   │   │   ├── [EquipmentLimitSeriesComponent] PT1 (58129b6d)
-│       │   │   │   ├── [PowerTransformerEnd] PTE1 (04e11e3d)
+│       │   │   │   ├── [PowerTransformerEnd] PTE1 (04e11e3d) <3>
 │       │   │   │   ├── [PowerTransformerEnd] PTE2 (d3ecf2cf)
-│       │   │   │   ├── [Terminal] 3713ebb9 (3713ebb9)
+│       │   │   │   ├── [Terminal] 3713ebb9 (3713ebb9) <4>
 │       │   │   │   └── [Terminal] 5282c65d (5282c65d)
 │       │   │   └── OUT
 │       │   │       ├── [ReportingGroup] Q1 Queue (afname) (4f99ccb9)
 │       │   │       └── ↩ [Substation] SS1 Onderstation (33e0e727)
-│       │   ├── [PowerTransformer] PT2 (bb2a9fe6)
-│       │   │   ├── IN
-│       │   │   │   ├── [ContingencyEquipment] 1e70d7d2 (1e70d7d2)
-│       │   │   │   ├── [EquipmentLimitSeriesComponent] PT2 (b99099a6)
-│       │   │   │   ├── [PowerTransformerEnd] PTE1 (51ae85b4)
-│       │   │   │   ├── [PowerTransformerEnd] PTE2 (dd532dc3)
-│       │   │   │   ├── [Terminal] 10b1a2ea (10b1a2ea)
-│       │   │   │   └── [Terminal] c798a3e8 (c798a3e8)
-│       │   │   └── OUT
-│       │   │       ├── ↩ [ReportingGroup] Q1 Queue (afname) (4f99ccb9)
-│       │   │       └── ↩ [Substation] SS1 Onderstation (33e0e727)
-│       │   ├── [PowerTransformer] PT3 (e815efcf)
-│       │   │   ├── IN
-│       │   │   │   ├── [Analog] Benodigde transportcapaciteit (afname) (45bda860)
-│       │   │   │   ├── [OperationalLimitSet] PT3 aanwezige transportcapaciteit (e2ee4fe2)
-│       │   │   │   ├── [PowerTransformerEnd] PTE1 (0b969602)
-│       │   │   │   ├── [PowerTransformerEnd] PTE2 (6381c40b)
-│       │   │   │   ├── [Terminal] 35668d66 (35668d66)
-│       │   │   │   └── [Terminal] 4d7a1839 (4d7a1839)
-│       │   │   └── OUT
-│       │   │       └── ↩ [Substation] SS1 Onderstation (33e0e727)
-│       │   ├── [VoltageLevel] VL1 Onderstation 150 kV (811d6306)
+│       │   ├── [VoltageLevel] VL1 Onderstation 150 kV (811d6306) <5>
 │       │   │   ├── IN
 │       │   │   │   └── [ConnectivityNode] 86ab9476 (86ab9476)
 │       │   │   └── OUT
-│       │   │       ├── [BaseVoltage] AC-150 (35f70516)
+│       │   │       ├── [BaseVoltage] AC-150 (35f70516) <6>
 │       │   │       └── ↩ [Substation] SS1 Onderstation (33e0e727)
-│       │   ├── [VoltageLevel] VL2 Onderstation 150 kV (1099e05b)
-│       │   │   ├── IN
-│       │   │   │   └── [ConnectivityNode] 3b84e985 (3b84e985)
-│       │   │   └── OUT
-│       │   │       ├── ↩ [BaseVoltage] AC-150 (35f70516)
-│       │   │       └── ↩ [Substation] SS1 Onderstation (33e0e727)
-│       │   ├── [VoltageLevel] VL3 Onderstation 150 kV (e29212f8)
-│       │   │   ├── IN
-│       │   │   │   └── [ConnectivityNode] b40ff945 (b40ff945)
-│       │   │   └── OUT
-│       │   │       ├── ↩ [BaseVoltage] AC-150 (35f70516)
-│       │   │       └── ↩ [Substation] SS1 Onderstation (33e0e727)
-│       │   ├── [VoltageLevel] VL4 Onderstation 10 kV (e34c1d95)
-│       │   │   ├── IN
-│       │   │   │   ├── [ConnectivityNode] 6c5c62ef (6c5c62ef)
-│       │   │   │   └── [EnergyConsumer] VL4 - 1234AA/1 (9483a292)
-│       │   │   └── OUT
-│       │   │       ├── [BaseVoltage] AC-10 (b2e53348)
-│       │   │       └── ↩ [Substation] SS1 Onderstation (33e0e727)
-│       │   ├── [VoltageLevel] VL5 Onderstation 10 kV (d94a2693)
-│       │   │   ├── IN
-│       │   │   │   └── [ConnectivityNode] e5e4ca51 (e5e4ca51)
-│       │   │   └── OUT
-│       │   │       ├── ↩ [BaseVoltage] AC-10 (b2e53348)
-│       │   │       └── ↩ [Substation] SS1 Onderstation (33e0e727)
-│       │   └── [VoltageLevel] VL6 Onderstation 10 kV (7faf31c8)
-│       │       ├── IN
-│       │       │   ├── [ConnectivityNode] ece9508b (ece9508b)
-│       │       │   └── [EnergyConsumer] VL6 1234AB (3641a9b8)
-│       │       └── OUT
-│       │           ├── ↩ [BaseVoltage] AC-10 (b2e53348)
-│       │           └── ↩ [Substation] SS1 Onderstation (33e0e727)
 │       └── OUT
 │           └── [SubGeographicalRegion] Transmission System Operator B.V. (d8ce36c5)
-│               ├── IN
-│               │   └── ↩ [Substation] SS1 Onderstation (33e0e727)
-│               └── OUT
-│                   └── ↩ [GeographicalRegion] NL (731f86be)
 └── OUT
     └── [GeographicalRegion] NL (731f86be)
 ----
 
-== Distribution System Operator
+=== PowerTransformer
 
-NOTE: to be added
+[source,bash]
+----
+[PowerTransformer] PT1 (ac3efcf7)
+├── IN
+│   ├── [ContingencyEquipment] b38091ba (b38091ba)
+│   │   └── OUT
+│   │       ├── [Contingency] Knelpunt Onderstation VL4 & VL5 10 kV (2f57a41e)
+│   │       │   └── IN
+│   │       │       ├── [ContingencyEquipment] 1e70d7d2 (1e70d7d2)
+│   │       │       ├── [nl:CongestionDocument] Knelpunt Onderstation 150 kV (c0f906ec)
+│   │       │       └── ↩ [ContingencyEquipment] b38091ba (b38091ba)
+│   │       └── ↩ [PowerTransformer] PT1 (ac3efcf7)
+│   ├── [EquipmentLimitSeriesComponent] PT1 (58129b6d)
+│   │   └── OUT
+│   │       ├── [SeriesEquipmentDependentLimit] PT1 & PT2 (grid security n-1) (1acd1325)
+│   │       │   └── IN
+│   │       │       ├── [ActivePowerLimit] Aanwezige transportcapaciteit (grid security n-1) (afname) (b07ce6db)
+│   │       │       ├── [ActivePowerLimit] Aanwezige transportcapaciteit (grid security n-1) (invoeding) (c8a16893)
+│   │       │       ├── [Analog] Benodigde transportcapaciteit (grid security n-1) (afname) (dc02358b)
+│   │       │       ├── ↩ [EquipmentLimitSeriesComponent] PT1 (58129b6d)
+│   │       │       └── ↩ [EquipmentLimitSeriesComponent] PT2 (b99099a6)
+│   │       └── ↩ [PowerTransformer] PT1 (ac3efcf7)
+│   ├── [PowerTransformerEnd] PTE1 (04e11e3d)
+│   │   └── OUT
+│   │       ├── [PowerTransformer] PT1 (ac3efcf7)
+│   │       │   ├── IN
+│   │       │   │   ├── ↩ [ContingencyEquipment] b38091ba (b38091ba)
+│   │       │   │   ├── ↩ [EquipmentLimitSeriesComponent] PT1 (58129b6d)
+│   │       │   │   ├── ↩ [PowerTransformerEnd] PTE1 (04e11e3d)
+│   │       │   │   ├── ↩ [PowerTransformerEnd] PTE2 (d3ecf2cf)
+│   │       │   │   ├── ↩ [Terminal] 3713ebb9 (3713ebb9)
+│   │       │   │   └── ↩ [Terminal] 5282c65d (5282c65d)
+│   │       │   └── OUT
+│   │       │       ├── ↩ [ReportingGroup] Q1 Queue (afname) (4f99ccb9)
+│   │       │       └── ↩ [Substation] SS1 Onderstation (33e0e727)
+│   │       └── ↩ [Terminal] 3713ebb9 (3713ebb9)
+└── OUT
+    ├── [ReportingGroup] Q1 Queue (afname) (4f99ccb9)
+    │   └── IN
+    │       ├── [nl:Queue] Q1 Queue (afname) (827ab709)
+    │       │   └── OUT
+    │       │       ├── [ActivePower] 1b18836b (1b18836b)
+    │       │       └── ↩ [ReportingGroup] Q1 Queue (afname) (4f99ccb9)
+    │       ├── ↩ [PowerTransformer] PT1 (ac3efcf7)
+    │       └── ↩ [PowerTransformer] PT2 (bb2a9fe6)
+    └── [Substation] SS1 Onderstation (33e0e727)
+----
