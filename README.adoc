@@ -1,5 +1,4 @@
 = Netbeheer-Nederland/nbnl-examples
-
 :toc:
 :toclevels: 2
 
@@ -66,8 +65,8 @@ generating the final JSON-LD output.
 
 Run all examples from the provided Docker environment.
 
-. Build or start the ghcr.io/netbeheer-nederland/build-dp:latest[Docker
-container]
+. Build or start the `ghcr.io/netbeheer-nederland/build-dp:latest` Docker
+container
 . Enter the container.
 . Open the directory of the example that you want to execute.
 . Follow the instructions in the `README.adoc` of that example.
