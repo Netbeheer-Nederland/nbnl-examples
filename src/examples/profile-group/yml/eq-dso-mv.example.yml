@@ -7,11 +7,18 @@
   nl: https://cim.ucaiug.io/ns/nl#
   xsd: http://www.w3.org/2001/XMLSchema#
 '@graph':
+  # --- cim:Substation --------------------------------------------------------
+  - '@id': urn:uuid:3deea2c7-5fdf-464f-a904-b195eb84f89a
+    '@type': cim:Substation
+    cim:Substation.Region:
+      '@id': urn:uuid:0a1d2b08-6e92-489b-9161-b3eec2aa479f
+    cim:IdentifiedObject.mRID: 3deea2c7-5fdf-464f-a904-b195eb84f89a
+    cim:IdentifiedObject.name: 'SS1 Onderstation Distributie'
   # --- cim:PowerTransformer (1) ----------------------------------------------
   - '@id': urn:uuid:b7949224-9031-4365-a891-ffcdac3efcf7
     '@type': cim:PowerTransformer
     cim:Equipment.EquipmentContainer:
-      '@id': urn:uuid:e5f75ac7-664f-40c4-aded-3e8133e0e727
+      '@id': urn:uuid:3deea2c7-5fdf-464f-a904-b195eb84f89a
     cim:PowerSystemResource.ReportingGroup:
       - '@id': urn:uuid:36135063-70dc-4f9e-aa25-b30f4f99ccb9
     cim:IdentifiedObject.mRID: b7949224-9031-4365-a891-ffcdac3efcf7
@@ -55,7 +62,7 @@
     cim:VoltageLevel.BaseVoltage:
       '@id': urn:uuid:45b9413e-a116-4952-8cf8-aeb4b2e53348
     cim:VoltageLevel.Substation:
-      '@id': urn:uuid:e5f75ac7-664f-40c4-aded-3e8133e0e727
+      '@id': urn:uuid:3deea2c7-5fdf-464f-a904-b195eb84f89a
     cim:IdentifiedObject.mRID: 182198a6-7817-45bc-be6f-d67fe34c1d95
     cim:IdentifiedObject.name: 'VL4 Onderstation 10 kV'
   - '@id': urn:uuid:e86747ef-9dd7-4d36-9805-87ed6c5c62ef
@@ -67,7 +74,7 @@
   - '@id': urn:uuid:a5b57c56-a824-411c-b0b9-db68bb2a9fe6
     '@type': cim:PowerTransformer
     cim:Equipment.EquipmentContainer:
-      '@id': urn:uuid:e5f75ac7-664f-40c4-aded-3e8133e0e727
+      '@id': urn:uuid:3deea2c7-5fdf-464f-a904-b195eb84f89a
     cim:PowerSystemResource.ReportingGroup:
       - '@id': urn:uuid:36135063-70dc-4f9e-aa25-b30f4f99ccb9
     cim:IdentifiedObject.mRID: a5b57c56-a824-411c-b0b9-db68bb2a9fe6
@@ -111,7 +118,7 @@
     cim:VoltageLevel.BaseVoltage:
       '@id': urn:uuid:45b9413e-a116-4952-8cf8-aeb4b2e53348
     cim:VoltageLevel.Substation:
-      '@id': urn:uuid:e5f75ac7-664f-40c4-aded-3e8133e0e727
+      '@id': urn:uuid:3deea2c7-5fdf-464f-a904-b195eb84f89a
     cim:IdentifiedObject.mRID: 2a825e01-93f9-4f71-9860-952ed94a2693
     cim:IdentifiedObject.name: 'VL5 Onderstation 10 kV'
   - '@id': urn:uuid:69791751-35fa-45c9-b111-ae2fe5e4ca51
@@ -123,7 +130,7 @@
   - '@id': urn:uuid:f3695f11-3219-4a5a-9ae0-1fc6e815efcf
     '@type': cim:PowerTransformer
     cim:Equipment.EquipmentContainer:
-      '@id': urn:uuid:e5f75ac7-664f-40c4-aded-3e8133e0e727
+      '@id': urn:uuid:3deea2c7-5fdf-464f-a904-b195eb84f89a
     cim:IdentifiedObject.mRID: f3695f11-3219-4a5a-9ae0-1fc6e815efcf
     cim:IdentifiedObject.name: 'PT3'
   # --- cim:PowerTransformerEnd (3-1) -----------------------------------------
@@ -166,7 +173,7 @@
     cim:VoltageLevel.BaseVoltage:
       '@id': urn:uuid:45b9413e-a116-4952-8cf8-aeb4b2e53348
     cim:VoltageLevel.Substation:
-      '@id': urn:uuid:e5f75ac7-664f-40c4-aded-3e8133e0e727
+      '@id': urn:uuid:3deea2c7-5fdf-464f-a904-b195eb84f89a
     cim:IdentifiedObject.mRID: ecc6b23e-78dd-47dd-9fe7-1d5c7faf31c8
     cim:IdentifiedObject.name: 'VL6 Onderstation 10 kV'
   # --- cim:Bay (PowerTransformer/VL6) ----------------------------------------
