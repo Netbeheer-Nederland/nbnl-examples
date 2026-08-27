@@ -156,10 +156,11 @@
   - '@id': urn:uuid:8feb418f-87b5-4454-ab3b-d38b4d7a1839
     '@type': cim:Terminal
     cim:Terminal.ConnectivityNode:
-      '@id': urn:uuid:7dd01200-447e-4795-b59a-9382ece9508b
+      '@id': urn:uuid:a8af96b4-7bb7-4c9a-98af-b505e415629d
     cim:Terminal.ConductingEquipment:
       '@id': urn:uuid:f3695f11-3219-4a5a-9ae0-1fc6e815efcf
     cim:IdentifiedObject.mRID: 8feb418f-87b5-4454-ab3b-d38b4d7a1839
+  # --- cim:VoltageLevel (3-2) ------------------------------------------------
   - '@id': urn:uuid:ecc6b23e-78dd-47dd-9fe7-1d5c7faf31c8
     '@type': cim:VoltageLevel
     cim:VoltageLevel.BaseVoltage:
@@ -168,11 +169,93 @@
       '@id': urn:uuid:e5f75ac7-664f-40c4-aded-3e8133e0e727
     cim:IdentifiedObject.mRID: ecc6b23e-78dd-47dd-9fe7-1d5c7faf31c8
     cim:IdentifiedObject.name: 'VL6 Onderstation 10 kV'
-  - '@id': urn:uuid:7dd01200-447e-4795-b59a-9382ece9508b
+  # --- cim:Bay (PowerTransformer/VL6) ----------------------------------------
+  - '@id': urn:uuid:78827f61-7205-45c4-b464-7a844fbf9eda
+    '@type': cim:Bay
+    cim:Bay.VoltageLevel:
+      '@id': urn:uuid:ecc6b23e-78dd-47dd-9fe7-1d5c7faf31c8
+    cim:IdentifiedObject.mRID: 78827f61-7205-45c4-b464-7a844fbf9eda
+  - '@id': urn:uuid:a8af96b4-7bb7-4c9a-98af-b505e415629d
+    '@type': cim:ConnectivityNode
+    cim:ConnectivityNode.ConnectivityNodeContainer:
+      '@id': urn:uuid:78827f61-7205-45c4-b464-7a844fbf9eda
+    cim:IdentifiedObject.mRID: a8af96b4-7bb7-4c9a-98af-b505e415629d
+    cim:IdentifiedObject.name: 'B1 PowerTransformer VL6'
+  # --- cim:BusbarSection (VL6) -----------------------------------------------
+  - '@id': urn:uuid:7446d028-b11e-42f7-9f1d-2a3c39233d99
     '@type': cim:ConnectivityNode
     cim:ConnectivityNode.ConnectivityNodeContainer:
       '@id': urn:uuid:ecc6b23e-78dd-47dd-9fe7-1d5c7faf31c8
-    cim:IdentifiedObject.mRID: 7dd01200-447e-4795-b59a-9382ece9508b
+    cim:IdentifiedObject.mRID: 7446d028-b11e-42f7-9f1d-2a3c39233d99
+  - '@id': urn:uuid:93443f69-8561-41dc-b610-0c599f0f715c
+    '@type': cim:BusbarSection
+    cim:Equipment.EquipmentContainer:
+      '@id': urn:uuid:ecc6b23e-78dd-47dd-9fe7-1d5c7faf31c8
+    cim:IdentifiedObject.mRID: 93443f69-8561-41dc-b610-0c599f0f715c
+    cim:IdentifiedObject.name: 'BBS VL6'
+  - '@id': urn:uuid:6853dcdc-8bcb-4776-932d-0243a2227189
+    '@type': cim:Terminal
+    cim:Terminal.ConnectivityNode:
+      '@id': urn:uuid:7446d028-b11e-42f7-9f1d-2a3c39233d99
+    cim:Terminal.ConductingEquipment:
+      '@id': urn:uuid:93443f69-8561-41dc-b610-0c599f0f715c
+    cim:IdentifiedObject.mRID: 6853dcdc-8bcb-4776-932d-0243a2227189
+  # --- cim:Switch (PowerTransformer/VL6) -------------------------------------
+  - '@id': urn:uuid:bc313d8c-f0fd-48d4-a7f3-cc57ed01d998
+    '@type': cim:Terminal
+    cim:Terminal.ConnectivityNode:
+      '@id': urn:uuid:a8af96b4-7bb7-4c9a-98af-b505e415629d
+    cim:Terminal.ConductingEquipment:
+      '@id': urn:uuid:f1b7d201-6ec8-43e9-940a-731f89dc84e6
+    cim:IdentifiedObject.mRID: bc313d8c-f0fd-48d4-a7f3-cc57ed01d998
+  - '@id': urn:uuid:f1b7d201-6ec8-43e9-940a-731f89dc84e6
+    '@type': cim:Switch
+    cim:Switch.normalOpen: false
+    cim:Equipment.EquipmentContainer:
+      '@id': urn:uuid:78827f61-7205-45c4-b464-7a844fbf9eda
+    cim:IdentifiedObject.mRID: f1b7d201-6ec8-43e9-940a-731f89dc84e6
+    cim:IdentifiedObject.name: 'SW1 PowerTransformer VL6'
+  - '@id': urn:uuid:8d75b291-f0f3-44d1-81a7-86f91e01c42e
+    '@type': cim:Terminal
+    cim:Terminal.ConnectivityNode:
+      '@id': urn:uuid:7446d028-b11e-42f7-9f1d-2a3c39233d99
+    cim:Terminal.ConductingEquipment:
+      '@id': urn:uuid:f1b7d201-6ec8-43e9-940a-731f89dc84e6
+    cim:IdentifiedObject.mRID: 8d75b291-f0f3-44d1-81a7-86f91e01c42e
+  # --- cim:Bay (ACLineSegment/VL6) -------------------------------------------
+  - '@id': urn:uuid:a82f90c4-90d1-458a-8e79-cdd95a9202e0
+    '@type': cim:Bay
+    cim:Bay.VoltageLevel:
+      '@id': urn:uuid:ecc6b23e-78dd-47dd-9fe7-1d5c7faf31c8
+    cim:IdentifiedObject.mRID: a82f90c4-90d1-458a-8e79-cdd95a9202e0
+  - '@id': urn:uuid:0d1449d1-e5c8-4a81-9313-6835e80b4659
+    '@type': cim:ConnectivityNode
+    cim:ConnectivityNode.ConnectivityNodeContainer:
+      '@id': urn:uuid:a82f90c4-90d1-458a-8e79-cdd95a9202e0
+    cim:IdentifiedObject.mRID: 0d1449d1-e5c8-4a81-9313-6835e80b4659
+    cim:IdentifiedObject.name: 'B2 ACLineSegment VL6'
+  # --- cim:Switch (ACLineSegment/VL6) ----------------------------------------
+  - '@id': urn:uuid:8bec8d1e-529b-4d1a-9746-64eb20b22bdb
+    '@type': cim:Terminal
+    cim:Terminal.ConnectivityNode:
+      '@id': urn:uuid:0d1449d1-e5c8-4a81-9313-6835e80b4659
+    cim:Terminal.ConductingEquipment:
+      '@id': urn:uuid:9ed6aaf6-ba8a-4bf9-a508-54379eeada8c
+    cim:IdentifiedObject.mRID: 8bec8d1e-529b-4d1a-9746-64eb20b22bdb
+  - '@id': urn:uuid:9ed6aaf6-ba8a-4bf9-a508-54379eeada8c
+    '@type': cim:Switch
+    cim:Switch.normalOpen: false
+    cim:Equipment.EquipmentContainer:
+      '@id': urn:uuid:a82f90c4-90d1-458a-8e79-cdd95a9202e0
+    cim:IdentifiedObject.mRID: 9ed6aaf6-ba8a-4bf9-a508-54379eeada8c
+    cim:IdentifiedObject.name: 'SW2 ACLineSegment VL6'
+  - '@id': urn:uuid:d6e831d7-794e-4de3-8ae6-58cf19777461
+    '@type': cim:Terminal
+    cim:Terminal.ConnectivityNode:
+      '@id': urn:uuid:7446d028-b11e-42f7-9f1d-2a3c39233d99
+    cim:Terminal.ConductingEquipment:
+      '@id': urn:uuid:9ed6aaf6-ba8a-4bf9-a508-54379eeada8c
+    cim:IdentifiedObject.mRID: d6e831d7-794e-4de3-8ae6-58cf19777461
   # --- cim:ActivePowerLimit (1) ----------------------------------------------
   - '@id': urn:uuid:c149afa4-8afd-4605-8acd-b021b07ce6db
     '@type': cim:ActivePowerLimit
@@ -498,6 +581,8 @@
     '@type': cim:Terminal
     cim:Terminal.ConductingEquipment:
       '@id': urn:uuid:1d65c75c-34ff-4c30-8d96-eb056827ea1c
+    cim:Terminal.ConnectivityNode:
+      '@id': urn:uuid:0d1449d1-e5c8-4a81-9313-6835e80b4659
     cim:IdentifiedObject.mRID: ebaa3863-b904-4d69-b2cd-9b380fbec051
   - '@id': urn:uuid:6a20468c-676c-4d84-b63a-1999efa0da58
     '@type': cim:Terminal

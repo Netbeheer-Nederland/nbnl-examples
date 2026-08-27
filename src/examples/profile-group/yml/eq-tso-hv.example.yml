@@ -1,0 +1,49 @@
+'@context':
+  linkml: https://w3id.org/linkml/
+  cim: https://cim.ucaiug.io/ns#
+  dcterms: http://purl.org/dc/terms/
+  eu: https://cim.ucaiug.io/ns/eu#
+  nbnl: https://begrippen.netbeheernederland.nl/energiesysteembeheer/nl/page/
+  nl: https://cim.ucaiug.io/ns/nl#
+  xsd: http://www.w3.org/2001/XMLSchema#
+'@graph':
+  # --- cim:Switch ------------------------------------------------------------
+  - '@id': urn:uuid:be589d67-91ad-4e13-b1bf-763f20fbb6c1
+    '@type': cim:Terminal
+    cim:Terminal.ConnectivityNode:
+      '@id': urn:uuid:0d7aacf3-552c-4d81-95ec-de36b40ff945
+    cim:Terminal.ConductingEquipment:
+      '@id': urn:uuid:e4d1ca78-7e7f-4913-a9f8-c837cb5e4399
+    cim:IdentifiedObject.mRID: be589d67-91ad-4e13-b1bf-763f20fbb6c1
+  - '@id': urn:uuid:e4d1ca78-7e7f-4913-a9f8-c837cb5e4399
+    '@type': cim:Switch
+    cim:Switch.normalOpen: false
+    cim:Equipment.EquipmentContainer:
+      '@id': urn:uuid:40144854-2539-4e06-bb26-200509c3be1a
+    cim:IdentifiedObject.mRID: e4d1ca78-7e7f-4913-a9f8-c837cb5e4399
+  - '@id': urn:uuid:7489cab1-18eb-40b4-804e-348e76202fb4
+    '@type': cim:Terminal
+    cim:Terminal.ConnectivityNode:
+      '@id': urn:uuid:c45c9072-1ce9-4ee5-97a5-786004c2bade
+    cim:Terminal.ConductingEquipment:
+      '@id': urn:uuid:e4d1ca78-7e7f-4913-a9f8-c837cb5e4399
+    cim:IdentifiedObject.mRID: 7489cab1-18eb-40b4-804e-348e76202fb4
+  # --- cim:ConnectivityNode (Central) ----------------------------------------
+  - '@id': urn:uuid:c45c9072-1ce9-4ee5-97a5-786004c2bade
+    '@type': cim:ConnectivityNode
+    cim:ConnectivityNode.ConnectivityNodeContainer:
+      '@id': urn:uuid:e5d28028-d25c-4c1a-8b21-6b58e29212f8
+    cim:IdentifiedObject.mRID: c45c9072-1ce9-4ee5-97a5-786004c2bade
+  # --- cim:BusbarSection -----------------------------------------------------
+  - '@id': urn:uuid:dabb3f6a-e0fc-49c8-841c-3a2ae26c95aa
+    '@type': cim:Terminal
+    cim:Terminal.ConnectivityNode:
+      '@id': urn:uuid:c45c9072-1ce9-4ee5-97a5-786004c2bade
+    cim:Terminal.ConductingEquipment:
+      '@id': urn:uuid:4a117004-8c91-44d1-8900-378ab2e43c5d
+    cim:IdentifiedObject.mRID: dabb3f6a-e0fc-49c8-841c-3a2ae26c95aa
+  - '@id': urn:uuid:4a117004-8c91-44d1-8900-378ab2e43c5d
+    '@type': cim:BusbarSection
+    cim:Equipment.EquipmentContainer:
+      '@id': urn:uuid:e5d28028-d25c-4c1a-8b21-6b58e29212f8
+    cim:IdentifiedObject.mRID: 4a117004-8c91-44d1-8900-378ab2e43c5d

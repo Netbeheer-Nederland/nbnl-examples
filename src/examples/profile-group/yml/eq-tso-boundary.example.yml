@@ -71,12 +71,17 @@
       '@id': urn:uuid:e5f75ac7-664f-40c4-aded-3e8133e0e727
     cim:IdentifiedObject.mRID: e5d28028-d25c-4c1a-8b21-6b58e29212f8
     cim:IdentifiedObject.name: 'VL3 Onderstation 150 kV'
+  - '@id': urn:uuid:40144854-2539-4e06-bb26-200509c3be1a
+    '@type': cim:Bay
+    cim:Bay.VoltageLevel:
+      '@id': urn:uuid:e5d28028-d25c-4c1a-8b21-6b58e29212f8
+    cim:IdentifiedObject.mRID: 40144854-2539-4e06-bb26-200509c3be1a
   - '@id': urn:uuid:0d7aacf3-552c-4d81-95ec-de36b40ff945
     '@type': cim:ConnectivityNode
     eu:ConnectivityNode.BoundaryPoint:
       '@id': urn:uuid:26b6cfe6-70a3-489b-8951-cac5b4f473e6
     cim:ConnectivityNode.ConnectivityNodeContainer:
-      '@id': urn:uuid:e5d28028-d25c-4c1a-8b21-6b58e29212f8
+      '@id': urn:uuid:40144854-2539-4e06-bb26-200509c3be1a
     cim:IdentifiedObject.mRID: 0d7aacf3-552c-4d81-95ec-de36b40ff945
   - '@id': urn:uuid:26b6cfe6-70a3-489b-8951-cac5b4f473e6
     '@type': eu:BoundaryPoint
