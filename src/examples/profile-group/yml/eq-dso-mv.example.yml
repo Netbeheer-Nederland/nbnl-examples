@@ -373,7 +373,6 @@
   # --- cim:Contingency -------------------------------------------------------
   - '@id': urn:uuid:bf152016-1d5b-4192-a324-456a2f57a41e
     '@type': cim:Contingency
-    cim:Contingency.mustStudy: true
     cim:IdentifiedObject.mRID: bf152016-1d5b-4192-a324-456a2f57a41e
     cim:IdentifiedObject.name: 'Knelpunt Onderstation VL4 & VL5 10 kV'
   - '@id': urn:uuid:2b115331-fca3-4dea-90d5-d6dab38091ba
@@ -599,7 +598,6 @@
   # --- cim:Contingency (ACLineSegment) ---------------------------------------
   - '@id': urn:uuid:9e6b0e3f-e3d4-4dcf-9214-f30198c65ed8
     '@type': cim:Contingency
-    cim:Contingency.mustStudy: true
     cim:IdentifiedObject.mRID: 9e6b0e3f-e3d4-4dcf-9214-f30198c65ed8
     cim:IdentifiedObject.name: 'Knelpunt L1 & L2'
   # --- cim:ContingencyEquipment (ACL1) ---------------------------------------
