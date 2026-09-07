@@ -31,8 +31,6 @@
       '@id': urn:uuid:46e63aca-fe40-46f0-ba4f-6552425d485e
     cim:Location.PowerSystemResources:
       - urn:uuid:a5dfce7b-2748-4390-8aee-bedf3641a9b8
-    nl:Location.CongestionDocument:
-      - urn:uuid:a290cf3c-7570-4b03-96fb-a04ac0f906ec
     cim:IdentifiedObject.mRID: 513b9237-4dfd-49cc-a40a-87c4411223c0
   - '@id': urn:uuid:46e63aca-fe40-46f0-ba4f-6552425d485e
     '@type': cim:StreetAddress
