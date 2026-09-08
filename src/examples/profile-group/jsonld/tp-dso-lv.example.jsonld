@@ -1,0 +1,57 @@
+{
+  "@context": {
+    "linkml": "https://w3id.org/linkml/",
+    "cim": "https://cim.ucaiug.io/ns#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "eu": "https://cim.ucaiug.io/ns/eu#",
+    "nbnl": "https://begrippen.netbeheernederland.nl/energiesysteembeheer/nl/page/",
+    "nl": "https://cim.ucaiug.io/ns/nl#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "urn:uuid:fcdfc485-f265-43b2-a676-848804421f32",
+      "@type": "cim:TopologicalNode",
+      "cim:TopologicalNode.Terminal": [
+        "urn:uuid:b5e07ab7-8132-485d-bc5a-db259e8b5fbe",
+        "urn:uuid:95c1a5c1-9a67-4e82-9f4c-2a6e4fa2a5ac"
+      ],
+      "cim:IdentifiedObject.mRID": "fcdfc485-f265-43b2-a676-848804421f32"
+    },
+    {
+      "@id": "urn:uuid:8e7f66b6-5291-4d76-8508-3189f0d6744f",
+      "@type": "cim:BusNameMarker",
+      "cim:BusNameMarker.Terminal": [
+        "urn:uuid:b5e07ab7-8132-485d-bc5a-db259e8b5fbe",
+        "urn:uuid:95c1a5c1-9a67-4e82-9f4c-2a6e4fa2a5ac"
+      ],
+      "cim:BusNameMarker.TopologicalNode": {
+        "@id": "urn:uuid:fcdfc485-f265-43b2-a676-848804421f32"
+      },
+      "cim:IdentifiedObject.mRID": "8e7f66b6-5291-4d76-8508-3189f0d6744f",
+      "cim:IdentifiedObject.name": "PTE-EC"
+    },
+    {
+      "@id": "urn:uuid:936dfc5c-28cf-4f06-a363-5778545029f9",
+      "@type": "cim:TopologicalNode",
+      "cim:TopologicalNode.Terminal": [
+        "urn:uuid:51c32041-d9d1-54fc-a435-1d15ce4a5937",
+        "urn:uuid:164167ac-3ee6-4817-a2b0-14b28bf6ed20"
+      ],
+      "cim:IdentifiedObject.mRID": "936dfc5c-28cf-4f06-a363-5778545029f9"
+    },
+    {
+      "@id": "urn:uuid:8c00e265-eb3b-4ec5-b34c-1faafaa7c613",
+      "@type": "cim:BusNameMarker",
+      "cim:BusNameMarker.Terminal": [
+        "urn:uuid:51c32041-d9d1-54fc-a435-1d15ce4a5937",
+        "urn:uuid:164167ac-3ee6-4817-a2b0-14b28bf6ed20"
+      ],
+      "cim:BusNameMarker.TopologicalNode": {
+        "@id": "urn:uuid:936dfc5c-28cf-4f06-a363-5778545029f9"
+      },
+      "cim:IdentifiedObject.mRID": "8c00e265-eb3b-4ec5-b34c-1faafaa7c613",
+      "cim:IdentifiedObject.name": "PTE-PTE"
+    }
+  ]
+}

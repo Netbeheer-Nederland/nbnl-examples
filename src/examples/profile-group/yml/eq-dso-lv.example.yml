@@ -1,0 +1,125 @@
+'@context':
+  linkml: https://w3id.org/linkml/
+  cim: https://cim.ucaiug.io/ns#
+  dcterms: http://purl.org/dc/terms/
+  eu: https://cim.ucaiug.io/ns/eu#
+  nbnl: https://begrippen.netbeheernederland.nl/energiesysteembeheer/nl/page/
+  nl: https://cim.ucaiug.io/ns/nl#
+  xsd: http://www.w3.org/2001/XMLSchema#
+'@graph':
+  # --- cim:Substation --------------------------------------------------------
+  - '@id': urn:uuid:c0a20706-ed49-4707-abe8-e190fcfcc412
+    '@type': cim:Substation
+    cim:Substation.Region:
+      '@id': urn:uuid:0a1d2b08-6e92-489b-9161-b3eec2aa479f
+    cim:IdentifiedObject.mRID: c0a20706-ed49-4707-abe8-e190fcfcc412
+    cim:IdentifiedObject.name: 'SS4 Laagspanningsstation'
+  # --- cim:PowerTransformer --------------------------------------------------
+  - '@id': urn:uuid:310d6631-3021-4a1a-b15e-feea4c695ae9
+    '@type': cim:PowerTransformer
+    cim:Equipment.EquipmentContainer:
+      '@id': urn:uuid:c0a20706-ed49-4707-abe8-e190fcfcc412
+    cim:IdentifiedObject.mRID: 310d6631-3021-4a1a-b15e-feea4c695ae9
+    cim:IdentifiedObject.name: PT1
+  # --- cim:ActivePowerLimit (1) ----------------------------------------------
+  - '@id': urn:uuid:6f710a7c-9074-4f1a-8a3b-33d0bea8c92a
+    '@type': cim:ActivePowerLimit
+    cim:ActivePowerLimit.value:
+      '@id': urn:uuid:60429ae7-2c21-46aa-b9fa-913a24e79236
+    cim:OperationalLimit.OperationalLimitSet:
+      '@id': urn:uuid:fb1defd3-ccb1-4ac9-87ca-8c328fff0bd9
+    nl:OperationalLimit.positiveFlowIn: false
+    cim:IdentifiedObject.mRID: 6f710a7c-9074-4f1a-8a3b-33d0bea8c92a
+    cim:IdentifiedObject.name: Aanwezige transportcapaciteit (afname)
+  - '@id': urn:uuid:60429ae7-2c21-46aa-b9fa-913a24e79236
+    '@type': cim:ActivePower
+    cim:ActivePower.multiplier:
+      '@id': cim:UnitMultiplier.k
+    cim:ActivePower.unit:
+      '@id': cim:UnitSymbol.W
+    cim:ActivePower.value:
+      '@value': 630.0
+      '@type': xsd:float
+  # --- cim:OperationalLimitSet -----------------------------------------------
+  - '@id': urn:uuid:fb1defd3-ccb1-4ac9-87ca-8c328fff0bd9
+    '@type': cim:OperationalLimitSet
+    cim:OperationalLimitSet.Equipment:
+      '@id': urn:uuid:310d6631-3021-4a1a-b15e-feea4c695ae9
+    cim:OperationalLimitSet.Terminal:
+      '@id': urn:uuid:b5e07ab7-8132-485d-bc5a-db259e8b5fbe
+    cim:IdentifiedObject.mRID: fb1defd3-ccb1-4ac9-87ca-8c328fff0bd9
+  # --- cim:PowerTransformerEnd (1) -------------------------------------------
+  - '@id': urn:uuid:2e3fef36-a205-4841-ac2f-43a03847aaba
+    '@type': cim:VoltageLevel
+    cim:VoltageLevel.BaseVoltage:
+      '@id': urn:uuid:45b9413e-a116-4952-8cf8-aeb4b2e53348
+    cim:VoltageLevel.Substation:
+      '@id': urn:uuid:c0a20706-ed49-4707-abe8-e190fcfcc412
+    cim:IdentifiedObject.mRID: 2e3fef36-a205-4841-ac2f-43a03847aaba
+    cim:IdentifiedObject.name: 'VL1 Laagspanningsstation 10 kV'
+  - '@id': urn:uuid:67a1a327-6117-4f06-ac0d-39df54c1f8f8
+    '@type': cim:ConnectivityNode
+    cim:ConnectivityNode.ConnectivityNodeContainer:
+      '@id': urn:uuid:2e3fef36-a205-4841-ac2f-43a03847aaba
+    cim:IdentifiedObject.mRID: 67a1a327-6117-4f06-ac0d-39df54c1f8f8
+  - '@id': urn:uuid:196aaa39-7878-4927-85c6-cc5304fd3b94
+    '@type': cim:PowerTransformerEnd
+    cim:PowerTransformerEnd.PowerTransformer:
+      '@id': urn:uuid:310d6631-3021-4a1a-b15e-feea4c695ae9
+    cim:TransformerEnd.endNumber: 1
+    cim:TransformerEnd.Terminal:
+      '@id': urn:uuid:164167ac-3ee6-4817-a2b0-14b28bf6ed20
+    cim:IdentifiedObject.mRID: 196aaa39-7878-4927-85c6-cc5304fd3b94
+  - '@id': urn:uuid:164167ac-3ee6-4817-a2b0-14b28bf6ed20
+    '@type': cim:Terminal
+    cim:Terminal.ConnectivityNode:
+      '@id': urn:uuid:67a1a327-6117-4f06-ac0d-39df54c1f8f8
+    cim:Terminal.ConductingEquipment:
+      '@id': urn:uuid:310d6631-3021-4a1a-b15e-feea4c695ae9
+    cim:IdentifiedObject.mRID: 164167ac-3ee6-4817-a2b0-14b28bf6ed20
+  # --- cim:PowerTransformerEnd (2) -------------------------------------------
+  - '@id': urn:uuid:ec42c648-fd67-47ac-86c5-c5771ff82dfe
+    '@type': cim:VoltageLevel
+    cim:VoltageLevel.BaseVoltage:
+      '@id': urn:uuid:b7482b2f-bcb8-46e9-99b1-e0cd09f3c205
+    cim:VoltageLevel.Substation:
+      '@id': urn:uuid:c0a20706-ed49-4707-abe8-e190fcfcc412
+    cim:IdentifiedObject.mRID: ec42c648-fd67-47ac-86c5-c5771ff82dfe
+    cim:IdentifiedObject.name: 'VL2 Laagspanningsstation 0.4 kV'
+  - '@id': urn:uuid:7da5d089-38ff-4051-b5a8-93ee9a58b8b4
+    '@type': cim:ConnectivityNode
+    cim:ConnectivityNode.ConnectivityNodeContainer:
+      '@id': urn:uuid:ec42c648-fd67-47ac-86c5-c5771ff82dfe
+    cim:IdentifiedObject.mRID: 7da5d089-38ff-4051-b5a8-93ee9a58b8b4
+  - '@id': urn:uuid:1568ef33-71c2-4294-9547-d4074a40d04a
+    '@type': cim:PowerTransformerEnd
+    cim:PowerTransformerEnd.PowerTransformer:
+      '@id': urn:uuid:310d6631-3021-4a1a-b15e-feea4c695ae9
+    cim:TransformerEnd.endNumber: 2
+    cim:TransformerEnd.Terminal:
+      '@id': urn:uuid:b5e07ab7-8132-485d-bc5a-db259e8b5fbe
+    cim:IdentifiedObject.mRID: 1568ef33-71c2-4294-9547-d4074a40d04a
+  - '@id': urn:uuid:b5e07ab7-8132-485d-bc5a-db259e8b5fbe
+    '@type': cim:Terminal
+    cim:Terminal.ConnectivityNode:
+      '@id': urn:uuid:7da5d089-38ff-4051-b5a8-93ee9a58b8b4
+    cim:Terminal.ConductingEquipment:
+      '@id': urn:uuid:310d6631-3021-4a1a-b15e-feea4c695ae9
+    cim:IdentifiedObject.mRID: b5e07ab7-8132-485d-bc5a-db259e8b5fbe
+  # --- cim:EnergyConsumer ----------------------------------------------------
+  - '@id': urn:uuid:85985b38-f0b0-4b2c-977c-9d8011c696f8
+    '@type': cim:EnergyConsumer
+    cim:Equipment.EquipmentContainer:
+      '@id': urn:uuid:ec42c648-fd67-47ac-86c5-c5771ff82dfe
+    cim:IdentifiedObject.mRID: 85985b38-f0b0-4b2c-977c-9d8011c696f8
+  - '@id': urn:uuid:95c1a5c1-9a67-4e82-9f4c-2a6e4fa2a5ac
+    '@type': cim:Terminal
+    cim:Terminal.ConductingEquipment:
+      '@id': urn:uuid:85985b38-f0b0-4b2c-977c-9d8011c696f8
+    cim:IdentifiedObject.mRID: 95c1a5c1-9a67-4e82-9f4c-2a6e4fa2a5ac
+  - '@id': urn:uuid:bd2d176c-a593-4193-b196-88f48753d130
+    '@type': cim:UsagePoint
+    cim:UsagePoint.Equipments:
+      - '@id': urn:uuid:85985b38-f0b0-4b2c-977c-9d8011c696f8
+    cim:IdentifiedObject.mRID: bd2d176c-a593-4193-b196-88f48753d130
+    nl:IdentifiedObject.europeanArticleNumberEAN: '800012345678901112'
