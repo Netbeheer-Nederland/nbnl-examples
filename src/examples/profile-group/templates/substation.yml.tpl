@@ -107,7 +107,7 @@
   - '@id': urn:uuid:{{ cn_vl1 }}
     '@type': cim:ConnectivityNode
     cim:ConnectivityNode.ConnectivityNodeContainer:
-      '@id': urn:uuid:{{ ss }}
+      '@id': urn:uuid:{{ vl1 }}
     cim:IdentifiedObject.mRID: {{ cn_vl1 }}
   - '@id': urn:uuid:{{ pte1 }}
     '@type': cim:PowerTransformerEnd
@@ -136,7 +136,7 @@
   - '@id': urn:uuid:{{ cn_vl2 }}
     '@type': cim:ConnectivityNode
     cim:ConnectivityNode.ConnectivityNodeContainer:
-      '@id': urn:uuid:{{ ss }}
+      '@id': urn:uuid:{{ vl2 }}
     cim:IdentifiedObject.mRID: {{ cn_vl2 }}
   - '@id': urn:uuid:{{ pte2 }}
     '@type': cim:PowerTransformerEnd

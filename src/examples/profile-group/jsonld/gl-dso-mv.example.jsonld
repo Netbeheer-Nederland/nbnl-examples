@@ -1,0 +1,54 @@
+{
+  "@context": {
+    "linkml": "https://w3id.org/linkml/",
+    "cim": "https://cim.ucaiug.io/ns#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "eu": "https://cim.ucaiug.io/ns/eu#",
+    "nbnl": "https://begrippen.netbeheernederland.nl/energiesysteembeheer/nl/page/",
+    "nl": "https://cim.ucaiug.io/ns/nl#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "urn:uuid:ab4206a1-f5da-4d82-a32d-ef34e3d333c9",
+      "@type": "cim:Location",
+      "cim:Location.mainAddress": {
+        "@id": "urn:uuid:42aeac35-b3b8-4798-9d8f-c41d5f18fd4d"
+      },
+      "cim:Location.PowerSystemResources": [
+        "urn:uuid:389af6e3-a866-4bf8-8aca-e89e9483a292"
+      ],
+      "cim:IdentifiedObject.mRID": "ab4206a1-f5da-4d82-a32d-ef34e3d333c9",
+      "cim:IdentifiedObject.name": "1234AA/1"
+    },
+    {
+      "@id": "urn:uuid:42aeac35-b3b8-4798-9d8f-c41d5f18fd4d",
+      "@type": "cim:StreetAddress",
+      "cim:StreetAddress.postalCode": "1234AA",
+      "cim:StreetAddress.streetDetail": {
+        "@id": "urn:uuid:67d50ecc-50a4-4262-a0fc-290872581210"
+      }
+    },
+    {
+      "@id": "urn:uuid:67d50ecc-50a4-4262-a0fc-290872581210",
+      "@type": "cim:StreetDetail",
+      "cim:StreetDetail.number": "1"
+    },
+    {
+      "@id": "urn:uuid:513b9237-4dfd-49cc-a40a-87c4411223c0",
+      "@type": "cim:Location",
+      "cim:Location.mainAddress": {
+        "@id": "urn:uuid:46e63aca-fe40-46f0-ba4f-6552425d485e"
+      },
+      "cim:Location.PowerSystemResources": [
+        "urn:uuid:a5dfce7b-2748-4390-8aee-bedf3641a9b8"
+      ],
+      "cim:IdentifiedObject.mRID": "513b9237-4dfd-49cc-a40a-87c4411223c0"
+    },
+    {
+      "@id": "urn:uuid:46e63aca-fe40-46f0-ba4f-6552425d485e",
+      "@type": "cim:StreetAddress",
+      "cim:StreetAddress.postalCode": "1234AB"
+    }
+  ]
+}

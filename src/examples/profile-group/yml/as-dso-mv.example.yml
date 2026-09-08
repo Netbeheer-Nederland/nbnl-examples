@@ -13,7 +13,7 @@
   - '@id': urn:uuid:a290cf3c-7570-4b03-96fb-a04ac0f906ec
     '@type': nl:CongestionDocument
     nl:CongestionDocument.Contingency:
-      '@id': urn:uuid:bf152016-1d5b-4192-a324-456a2f57a41e
+      - urn:uuid:bf152016-1d5b-4192-a324-456a2f57a41e
     nl:CongestionDocument.constraint:
       '@id': nl:RAGKind.red
     nl:CongestionDocument.alleviationYear: 2028

@@ -1,0 +1,180 @@
+{
+  "@context": {
+    "linkml": "https://w3id.org/linkml/",
+    "cim": "https://cim.ucaiug.io/ns#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "eu": "https://cim.ucaiug.io/ns/eu#",
+    "nbnl": "https://begrippen.netbeheernederland.nl/energiesysteembeheer/nl/page/",
+    "nl": "https://cim.ucaiug.io/ns/nl#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "urn:uuid:118a7152-72a7-4300-a644-a80ab86bcde8",
+      "@type": "cim:Substation",
+      "cim:Substation.Region": {
+        "@id": "urn:uuid:a9bec16e-c4f7-4a70-9631-dedad8ce36c5"
+      },
+      "cim:IdentifiedObject.mRID": "118a7152-72a7-4300-a644-a80ab86bcde8",
+      "cim:IdentifiedObject.name": "SS3 Hoogspanningsstation Transmissie"
+    },
+    {
+      "@id": "urn:uuid:d4426824-541e-4615-9d91-3e7d248732cc",
+      "@type": "cim:PowerTransformer",
+      "cim:Equipment.EquipmentContainer": {
+        "@id": "urn:uuid:118a7152-72a7-4300-a644-a80ab86bcde8"
+      },
+      "cim:IdentifiedObject.mRID": "d4426824-541e-4615-9d91-3e7d248732cc",
+      "cim:IdentifiedObject.name": "PT1"
+    },
+    {
+      "@id": "urn:uuid:bfd7db69-6a0f-409a-bb5c-27e08f5fc47c",
+      "@type": "cim:Contingency",
+      "cim:IdentifiedObject.mRID": "bfd7db69-6a0f-409a-bb5c-27e08f5fc47c"
+    },
+    {
+      "@id": "urn:uuid:3bb42dc9-202c-486e-8af9-0bf519edc757",
+      "@type": "cim:ContingencyEquipment",
+      "cim:ContingencyEquipment.Equipment": {
+        "@id": "urn:uuid:d4426824-541e-4615-9d91-3e7d248732cc"
+      },
+      "cim:ContingencyElement.Contingency": {
+        "@id": "urn:uuid:bfd7db69-6a0f-409a-bb5c-27e08f5fc47c"
+      },
+      "cim:IdentifiedObject.mRID": "3bb42dc9-202c-486e-8af9-0bf519edc757"
+    },
+    {
+      "@id": "urn:uuid:11dcad31-1cde-4c33-b42c-d608254a0063",
+      "@type": "cim:ActivePowerLimit",
+      "cim:ActivePowerLimit.value": {
+        "@id": "urn:uuid:34f6a00b-d265-4eee-b0fc-511b39d71043"
+      },
+      "cim:OperationalLimit.OperationalLimitSet": {
+        "@id": "urn:uuid:927bb186-aa89-495c-86a7-7716efd006de"
+      },
+      "nl:OperationalLimit.positiveFlowIn": false,
+      "cim:IdentifiedObject.mRID": "11dcad31-1cde-4c33-b42c-d608254a0063",
+      "cim:IdentifiedObject.name": "Aanwezige transportcapaciteit (afname)"
+    },
+    {
+      "@id": "urn:uuid:34f6a00b-d265-4eee-b0fc-511b39d71043",
+      "@type": "cim:ActivePower",
+      "cim:ActivePower.multiplier": {
+        "@id": "cim:UnitMultiplier.k"
+      },
+      "cim:ActivePower.unit": {
+        "@id": "cim:UnitSymbol.W"
+      },
+      "cim:ActivePower.value": {
+        "@value": 630.0,
+        "@type": "xsd:float"
+      }
+    },
+    {
+      "@id": "urn:uuid:a4c9d931-5b5f-44be-8887-752b3e832900",
+      "@type": "cim:ActivePowerLimit",
+      "cim:ActivePowerLimit.value": {
+        "@id": "urn:uuid:a351be5b-2632-4ed1-983d-72c93510e633"
+      },
+      "cim:OperationalLimit.OperationalLimitSet": {
+        "@id": "urn:uuid:927bb186-aa89-495c-86a7-7716efd006de"
+      },
+      "nl:OperationalLimit.positiveFlowIn": true,
+      "cim:IdentifiedObject.mRID": "a4c9d931-5b5f-44be-8887-752b3e832900",
+      "cim:IdentifiedObject.name": "Aanwezige transportcapaciteit (invoeding)"
+    },
+    {
+      "@id": "urn:uuid:a351be5b-2632-4ed1-983d-72c93510e633",
+      "@type": "cim:ActivePower",
+      "cim:ActivePower.multiplier": {
+        "@id": "cim:UnitMultiplier.k"
+      },
+      "cim:ActivePower.unit": {
+        "@id": "cim:UnitSymbol.W"
+      },
+      "cim:ActivePower.value": {
+        "@value": 800.0,
+        "@type": "xsd:float"
+      }
+    },
+    {
+      "@id": "urn:uuid:927bb186-aa89-495c-86a7-7716efd006de",
+      "@type": "cim:OperationalLimitSet",
+      "cim:OperationalLimitSet.Equipment": {
+        "@id": "urn:uuid:d4426824-541e-4615-9d91-3e7d248732cc"
+      },
+      "cim:OperationalLimitSet.Terminal": {
+        "@id": "urn:uuid:3c23bf95-a849-438e-8dd7-2151320c31c2"
+      },
+      "cim:IdentifiedObject.mRID": "927bb186-aa89-495c-86a7-7716efd006de"
+    },
+    {
+      "@id": "urn:uuid:1fa5d88e-5565-46ef-9517-64653a0d51d0",
+      "@type": "cim:VoltageLevel",
+      "cim:VoltageLevel.BaseVoltage": {
+        "@id": "urn:uuid:b88e6bde11264fea83355102cd4f182c"
+      },
+      "cim:VoltageLevel.Substation": {
+        "@id": "urn:uuid:118a7152-72a7-4300-a644-a80ab86bcde8"
+      },
+      "cim:IdentifiedObject.mRID": "1fa5d88e-5565-46ef-9517-64653a0d51d0",
+      "cim:IdentifiedObject.name": "VL1 380 kV"
+    },
+    {
+      "@id": "urn:uuid:1c7662ba-2291-446a-afde-871dfd7f50c2",
+      "@type": "cim:ConnectivityNode",
+      "cim:ConnectivityNode.ConnectivityNodeContainer": {
+        "@id": "urn:uuid:1fa5d88e-5565-46ef-9517-64653a0d51d0"
+      },
+      "cim:IdentifiedObject.mRID": "1c7662ba-2291-446a-afde-871dfd7f50c2"
+    },
+    {
+      "@id": "urn:uuid:51e46877-482a-49c4-8f8f-94f24306826a",
+      "@type": "cim:PowerTransformerEnd",
+      "cim:PowerTransformerEnd.PowerTransformer": {
+        "@id": "urn:uuid:d4426824-541e-4615-9d91-3e7d248732cc"
+      },
+      "cim:TransformerEnd.endNumber": 1,
+      "cim:TransformerEnd.Terminal": {
+        "@id": "urn:uuid:6641a9a3-802e-46c9-b9bf-b7e0c1781c7a"
+      },
+      "cim:IdentifiedObject.mRID": "51e46877-482a-49c4-8f8f-94f24306826a",
+      "cim:IdentifiedObject.name": "PTE1"
+    },
+    {
+      "@id": "urn:uuid:6641a9a3-802e-46c9-b9bf-b7e0c1781c7a",
+      "@type": "cim:Terminal",
+      "cim:Terminal.ConnectivityNode": {
+        "@id": "urn:uuid:1c7662ba-2291-446a-afde-871dfd7f50c2"
+      },
+      "cim:Terminal.ConductingEquipment": {
+        "@id": "urn:uuid:d4426824-541e-4615-9d91-3e7d248732cc"
+      },
+      "cim:IdentifiedObject.mRID": "6641a9a3-802e-46c9-b9bf-b7e0c1781c7a"
+    },
+    {
+      "@id": "urn:uuid:c793daae-2764-411b-bfb4-03ed7390e63b",
+      "@type": "cim:PowerTransformerEnd",
+      "cim:PowerTransformerEnd.PowerTransformer": {
+        "@id": "urn:uuid:d4426824-541e-4615-9d91-3e7d248732cc"
+      },
+      "cim:TransformerEnd.endNumber": 2,
+      "cim:TransformerEnd.Terminal": {
+        "@id": "urn:uuid:3c23bf95-a849-438e-8dd7-2151320c31c2"
+      },
+      "cim:IdentifiedObject.mRID": "c793daae-2764-411b-bfb4-03ed7390e63b",
+      "cim:IdentifiedObject.name": "PTE2"
+    },
+    {
+      "@id": "urn:uuid:3c23bf95-a849-438e-8dd7-2151320c31c2",
+      "@type": "cim:Terminal",
+      "cim:Terminal.ConnectivityNode": {
+        "@id": "urn:uuid:7c66aa00-f7fd-47c9-9b34-30a186ab9476"
+      },
+      "cim:Terminal.ConductingEquipment": {
+        "@id": "urn:uuid:d4426824-541e-4615-9d91-3e7d248732cc"
+      },
+      "cim:IdentifiedObject.mRID": "3c23bf95-a849-438e-8dd7-2151320c31c2"
+    }
+  ]
+}

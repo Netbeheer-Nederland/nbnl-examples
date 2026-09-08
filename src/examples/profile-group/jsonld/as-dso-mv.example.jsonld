@@ -1,0 +1,34 @@
+{
+  "@context": {
+    "linkml": "https://w3id.org/linkml/",
+    "cim": "https://cim.ucaiug.io/ns#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "eu": "https://cim.ucaiug.io/ns/eu#",
+    "nbnl": "https://begrippen.netbeheernederland.nl/energiesysteembeheer/nl/page/",
+    "nl": "https://cim.ucaiug.io/ns/nl#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "urn:uuid:579fd3cd-ba97-453f-a8e9-61ada7ea1d3b",
+      "@type": "cim:ElectronicAddress",
+      "cim:ElectronicAddress.web": "https://example.com/onderstation-pt1"
+    },
+    {
+      "@id": "urn:uuid:a290cf3c-7570-4b03-96fb-a04ac0f906ec",
+      "@type": "nl:CongestionDocument",
+      "nl:CongestionDocument.Contingency": [
+        "urn:uuid:bf152016-1d5b-4192-a324-456a2f57a41e"
+      ],
+      "nl:CongestionDocument.constraint": {
+        "@id": "nl:RAGKind.red"
+      },
+      "nl:CongestionDocument.alleviationYear": 2028,
+      "cim:Document.electronicAddress": {
+        "@id": "urn:uuid:579fd3cd-ba97-453f-a8e9-61ada7ea1d3b"
+      },
+      "cim:IdentifiedObject.mRID": "a290cf3c-7570-4b03-96fb-a04ac0f906ec",
+      "cim:IdentifiedObject.name": "Knelpunt Onderstation 150 kV"
+    }
+  ]
+}
