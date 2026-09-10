@@ -70,6 +70,7 @@
     cim:TransformerEnd.Terminal:
       '@id': urn:uuid:164167ac-3ee6-4817-a2b0-14b28bf6ed20
     cim:IdentifiedObject.mRID: 196aaa39-7878-4927-85c6-cc5304fd3b94
+    cim:IdentifiedObject.name: PTE1
   - '@id': urn:uuid:164167ac-3ee6-4817-a2b0-14b28bf6ed20
     '@type': cim:Terminal
     cim:Terminal.ConnectivityNode:
@@ -99,6 +100,7 @@
     cim:TransformerEnd.Terminal:
       '@id': urn:uuid:b5e07ab7-8132-485d-bc5a-db259e8b5fbe
     cim:IdentifiedObject.mRID: 1568ef33-71c2-4294-9547-d4074a40d04a
+    cim:IdentifiedObject.name: PTE2
   - '@id': urn:uuid:b5e07ab7-8132-485d-bc5a-db259e8b5fbe
     '@type': cim:Terminal
     cim:Terminal.ConnectivityNode:
