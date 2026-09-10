@@ -1,0 +1,106 @@
+'@context':
+  linkml: https://w3id.org/linkml/
+  cim: https://cim.ucaiug.io/ns#
+  dcterms: http://purl.org/dc/terms/
+  eu: https://cim.ucaiug.io/ns/eu#
+  nbnl: https://begrippen.netbeheernederland.nl/energiesysteembeheer/nl/page/
+  nl: https://cim.ucaiug.io/ns/nl#
+  xsd: http://www.w3.org/2001/XMLSchema#
+'@graph':
+  # --- cim:Analog ------------------------------------------------------------
+  - '@id': urn:uuid:9b8611ff-28e2-4b9e-baa9-c90c098ba669
+    '@type': cim:Analog
+    cim:Analog.positiveFlowIn: false
+    cim:Measurement.unitMultiplier:
+      '@id': cim:UnitMultiplier.none
+    cim:Measurement.unitSymbol:
+      '@id': cim:UnitSymbol.W
+    cim:Measurement.Terminal:
+      - urn:uuid:95c1a5c1-9a67-4e82-9f4c-2a6e4fa2a5ac
+    cim:Measurement.PowerSystemResource:
+      - urn:uuid:85985b38-f0b0-4b2c-977c-9d8011c696f8
+    cim:IdentifiedObject.mRID: 9b8611ff-28e2-4b9e-baa9-c90c098ba669
+    cim:IdentifiedObject.name: 'Overdrachtspunt (enumeratie) (afname)'
+  - '@id': urn:uuid:d5f9e769-4084-403c-ae94-6789d6d72231
+    '@type': cim:AnalogValue
+    cim:AnalogValue.value:
+      '@value': 102.96
+      '@type': xsd:float
+    cim:AnalogValue.Analog:
+      '@id': urn:uuid:9b8611ff-28e2-4b9e-baa9-c90c098ba669
+    cim:MeasurementValue.timeStamp:
+      '@value': '2026-09-10T13:57:08.753131Z'
+      '@type': xsd:dateTime
+    nl:MeasurementValue.probabilityPercent:
+      '@value': 49.22
+      '@type': xsd:float
+    cim:IdentifiedObject.mRID: d5f9e769-4084-403c-ae94-6789d6d72231
+    cim:IdentifiedObject.name: 'ELECTRIC_HEATING_SUMMED_CAPACITY'
+  - '@id': urn:uuid:ab10a344-e6db-44fc-854c-11104e2eedcc
+    '@type': cim:AnalogValue
+    cim:AnalogValue.value:
+      '@value': 49.34
+      '@type': xsd:float
+    cim:AnalogValue.Analog:
+      '@id': urn:uuid:9b8611ff-28e2-4b9e-baa9-c90c098ba669
+    cim:MeasurementValue.timeStamp:
+      '@value': '2026-09-10T13:57:08.753131Z'
+      '@type': xsd:dateTime
+    nl:MeasurementValue.probabilityPercent:
+      '@value': 12.74
+      '@type': xsd:float
+    cim:IdentifiedObject.mRID: ab10a344-e6db-44fc-854c-11104e2eedcc
+    cim:IdentifiedObject.name: 'AIRCONDITIONING_SUMMED_CAPACITY'
+  # --- cim:Analog ------------------------------------------------------------
+  - '@id': urn:uuid:75e2fd65-6b11-4f90-bdf4-74a288d535b1
+    '@type': cim:Analog
+    cim:Measurement.unitMultiplier:
+      '@id': cim:UnitMultiplier.none
+    cim:Measurement.unitSymbol:
+      '@id': cim:UnitSymbol.none
+    cim:Measurement.Terminal:
+      - urn:uuid:5dde4174-b8c7-45f9-adea-1c22f825cf3f
+    cim:Measurement.PowerSystemResource:
+      - urn:uuid:eea1e0da-b2fb-4208-9284-8bee6f546f92
+    cim:IdentifiedObject.mRID: 75e2fd65-6b11-4f90-bdf4-74a288d535b1
+    cim:IdentifiedObject.name: 'Overdrachtspunt (aggregatie) (algemeen)'
+  - '@id': urn:uuid:a869a943-12cd-4926-b899-895d556ea107
+    '@type': cim:AnalogValue
+    cim:AnalogValue.value:
+      '@value': 28.0
+      '@type': xsd:float
+    cim:AnalogValue.Analog:
+      '@id': urn:uuid:74dfa398-ff20-4c7c-ac26-b2677f234ece
+    cim:MeasurementValue.timeStamp:
+      '@value': '2026-09-10T14:27:52.868660Z'
+      '@type': xsd:dateTime
+    cim:IdentifiedObject.mRID: a869a943-12cd-4926-b899-895d556ea107
+    cim:IdentifiedObject.name: 'EAN_COUNT'
+  - '@id': urn:uuid:74dfa398-ff20-4c7c-ac26-b2677f234ece
+    '@type': cim:Analog
+    cim:Analog.positiveFlowIn: false
+    cim:Measurement.unitMultiplier:
+      '@id': cim:UnitMultiplier.none
+    cim:Measurement.unitSymbol:
+      '@id': cim:UnitSymbol.W
+    cim:Measurement.Terminal:
+      - urn:uuid:5dde4174-b8c7-45f9-adea-1c22f825cf3f
+    cim:Measurement.PowerSystemResource:
+      - urn:uuid:eea1e0da-b2fb-4208-9284-8bee6f546f92
+    cim:IdentifiedObject.mRID: 74dfa398-ff20-4c7c-ac26-b2677f234ece
+    cim:IdentifiedObject.name: 'Overdrachtspunt (aggregatie) (afname)'
+  - '@id': urn:uuid:d64d24b5-32c8-4023-b98b-3db3b99c9919
+    '@type': cim:AnalogValue
+    cim:AnalogValue.value:
+      '@value': 578.24
+      '@type': xsd:float
+    cim:AnalogValue.Analog:
+      '@id': urn:uuid:74dfa398-ff20-4c7c-ac26-b2677f234ece
+    cim:MeasurementValue.timeStamp:
+      '@value': '2026-09-10T14:27:52.868660Z'
+      '@type': xsd:dateTime
+    nl:MeasurementValue.probabilityPercent:
+      '@value': 30.0
+      '@type': xsd:float
+    cim:IdentifiedObject.mRID: d64d24b5-32c8-4023-b98b-3db3b99c9919
+    cim:IdentifiedObject.name: 'SOLAR_PANEL_SUMMED_CAPACITY'

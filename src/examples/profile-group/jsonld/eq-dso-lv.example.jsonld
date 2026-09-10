@@ -176,7 +176,38 @@
         }
       ],
       "cim:IdentifiedObject.mRID": "bd2d176c-a593-4193-b196-88f48753d130",
-      "nl:IdentifiedObject.europeanArticleNumberEAN": "800012345678901112"
+      "nl:IdentifiedObject.europeanArticleNumberEAN": "800012345678901112",
+      "cim:IdentifiedObject.name": "Overdrachtspunt (enumeratie)"
+    },
+    {
+      "@id": "urn:uuid:eea1e0da-b2fb-4208-9284-8bee6f546f92",
+      "@type": "cim:EnergyConsumer",
+      "cim:Equipment.aggregate": true,
+      "cim:Equipment.EquipmentContainer": {
+        "@id": "urn:uuid:ec42c648-fd67-47ac-86c5-c5771ff82dfe"
+      },
+      "cim:IdentifiedObject.mRID": "eea1e0da-b2fb-4208-9284-8bee6f546f92"
+    },
+    {
+      "@id": "urn:uuid:5dde4174-b8c7-45f9-adea-1c22f825cf3f",
+      "@type": "cim:Terminal",
+      "cim:Terminal.ConductingEquipment": {
+        "@id": "urn:uuid:eea1e0da-b2fb-4208-9284-8bee6f546f92"
+      },
+      "cim:IdentifiedObject.mRID": "5dde4174-b8c7-45f9-adea-1c22f825cf3f"
+    },
+    {
+      "@id": "urn:uuid:ea3a6b0c-991a-4bb7-909e-6e99ff0e1464",
+      "@type": "cim:UsagePoint",
+      "cim:UsagePoint.Equipments": [
+        {
+          "@id": "urn:uuid:eea1e0da-b2fb-4208-9284-8bee6f546f92"
+        }
+      ],
+      "cim:UsagePoint.isVirtual": true,
+      "cim:IdentifiedObject.mRID": "ea3a6b0c-991a-4bb7-909e-6e99ff0e1464",
+      "nl:IdentifiedObject.europeanArticleNumberEAN": "800012345678901113",
+      "cim:IdentifiedObject.name": "Overdrachtspunt (aggregatie)"
     }
   ]
 }

@@ -18,7 +18,8 @@
       "cim:Location.PowerSystemResources": [
         "urn:uuid:85985b38-f0b0-4b2c-977c-9d8011c696f8"
       ],
-      "cim:IdentifiedObject.mRID": "4f38d7f9-e03b-4cae-8905-6c43bf8b04a0"
+      "cim:IdentifiedObject.mRID": "4f38d7f9-e03b-4cae-8905-6c43bf8b04a0",
+      "cim:IdentifiedObject.name": "1234AB/1"
     },
     {
       "@id": "urn:uuid:1435412c-3456-436f-b9db-b6b11101fa56",
@@ -32,6 +33,23 @@
       "@id": "urn:uuid:2aec4a47-93a2-4b9d-b1a5-751a2966a149",
       "@type": "cim:StreetDetail",
       "cim:StreetDetail.number": "1"
+    },
+    {
+      "@id": "urn:uuid:f09a5e3d-89b2-44dd-a4d3-cc9564d34ec3",
+      "@type": "cim:Location",
+      "cim:Location.mainAddress": {
+        "@id": "urn:uuid:14955ba8-a215-42d4-9bee-e32d2c407aae"
+      },
+      "cim:Location.PowerSystemResources": [
+        "urn:uuid:eea1e0da-b2fb-4208-9284-8bee6f546f92"
+      ],
+      "cim:IdentifiedObject.mRID": "f09a5e3d-89b2-44dd-a4d3-cc9564d34ec3",
+      "cim:IdentifiedObject.name": "1234AB"
+    },
+    {
+      "@id": "urn:uuid:14955ba8-a215-42d4-9bee-e32d2c407aae",
+      "@type": "cim:StreetAddress",
+      "cim:StreetAddress.postalCode": "1234AB"
     }
   ]
 }
