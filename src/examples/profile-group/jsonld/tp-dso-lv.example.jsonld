@@ -32,6 +32,28 @@
       "cim:IdentifiedObject.name": "PTE-EC"
     },
     {
+      "@id": "urn:uuid:bc66bf96-cb53-49d2-b15c-d0015445ba83",
+      "@type": "cim:TopologicalNode",
+      "cim:TopologicalNode.Terminal": [
+        "urn:uuid:b5e07ab7-8132-485d-bc5a-db259e8b5fbe",
+        "urn:uuid:5dde4174-b8c7-45f9-adea-1c22f825cf3f"
+      ],
+      "cim:IdentifiedObject.mRID": "bc66bf96-cb53-49d2-b15c-d0015445ba83"
+    },
+    {
+      "@id": "urn:uuid:59b95f74-1e16-4a0e-80d6-bb3fb2080880",
+      "@type": "cim:BusNameMarker",
+      "cim:BusNameMarker.Terminal": [
+        "urn:uuid:b5e07ab7-8132-485d-bc5a-db259e8b5fbe",
+        "urn:uuid:5dde4174-b8c7-45f9-adea-1c22f825cf3f"
+      ],
+      "cim:BusNameMarker.TopologicalNode": {
+        "@id": "urn:uuid:bc66bf96-cb53-49d2-b15c-d0015445ba83"
+      },
+      "cim:IdentifiedObject.mRID": "59b95f74-1e16-4a0e-80d6-bb3fb2080880",
+      "cim:IdentifiedObject.name": "PTE-EC"
+    },
+    {
       "@id": "urn:uuid:936dfc5c-28cf-4f06-a363-5778545029f9",
       "@type": "cim:TopologicalNode",
       "cim:TopologicalNode.Terminal": [
