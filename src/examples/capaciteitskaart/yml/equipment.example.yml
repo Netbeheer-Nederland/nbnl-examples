@@ -5,15 +5,15 @@
   nl: https://cim.ucaiug.io/ns/nl#
   xsd: http://www.w3.org/2001/XMLSchema#
   dcterms: http://purl.org/dc/terms/
-'@id': urn:uuid:acd08071-e0aa-4fce-852f-1bd88030758d
+'@id': urn:uuid:ae5f28c7-c9f3-4407-a139-7772566a4d2c
 'dcterms:issued':
-  '@value': 2026-05-08T12:00:00.000Z
+  '@value': 2026-09-17T12:00:00.000Z
   '@type': xsd:dateTime
 'dcterms:publisher':
   '@id': urn:uuid:4f74c8e2-adb5-4815-9607-eb00fb6a0d55
   'dcterms:title': 'Liander N.V.'
 'dcterms:conformsTo':
-  - '@id': https://modellen.netbeheernederland.nl/nbnl-equipment/2.0
+  - '@id': https://modellen.netbeheernederland.nl/nbnl-equipment/3.0
 'dcterms:references':
-  - '@id': urn:uuid:5bdf9a6d-ef38-4c4d-a6ee-42a9accdec64
+  - '@id': urn:uuid:8b0c6441-bf93-4873-9c75-f44c6c2faef8
 '@graph':
