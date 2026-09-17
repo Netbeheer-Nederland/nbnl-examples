@@ -29,6 +29,27 @@ $ jq -r '
   | @csv' json/LIANDER_20260401_v210.json|gen-linkml-profile template --var ssn --var pt --var dc --var gc templates/power-transformer.yml.tpl >> yml/equipment.example.yml
 ----
 
+## Equipment: `EnergyConsumer`-s
+
+[source,bash]
+----
+$ jq -r '
+  [
+    .. | .energy_areas? // empty
+    | .[]
+    | .postcode_areas[]
+    | [
+        .postcode,
+        .substation_short_code,
+        .description
+      ]
+  ]
+  | unique
+  | .[]
+  | @csv
+' json/LIANDER_20260401_v210.json|gen-linkml-profile template --var pc --var ssn --var pt templates/energy-consumer.yml.tpl >> yml/equipment.example.yml
+----
+
 ## Equipment: `Contingency`-s
 
 [source,bash]
@@ -154,7 +175,12 @@ $ jq -r '
 | unique
 | .[]
 | @csv' json/LIANDER_20260401_v210.json|gen-linkml-profile template --var pt templates/asset.yml.tpl >> yml/asset.example.yml
+----
 
+## Asset: `Work`
+
+[source,bash]
+----
 $ jq -r '
 [
   .. | .energy_areas? // empty
