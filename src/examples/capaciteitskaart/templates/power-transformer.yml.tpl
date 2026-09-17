@@ -14,6 +14,7 @@
     cim:TransformerEnd.Terminal:
       '@id': urn:uuid:{{ uuid5('t1_' + pt) }}
     cim:IdentifiedObject.mRID: {{ uuid5('pte1_' + pt) }}
+    cim:IdentifiedObject.name: PTE1 {{ pt }}
   # --- cim:Terminal (1) ------------------------------------------------------
   - '@id': urn:uuid:{{ uuid5('t1_' + pt) }}
     '@type': cim:Terminal
@@ -29,6 +30,7 @@
     cim:TransformerEnd.Terminal:
       '@id': urn:uuid:{{ uuid5('t2_' + pt) }}
     cim:IdentifiedObject.mRID: {{ uuid5('pte2_' + pt) }}
+    cim:IdentifiedObject.name: PTE2 {{ pt }}
   # --- cim:VoltageLevel (2) --------------------------------------------------
   - '@id': urn:uuid:{{ uuid5('vl2_' + pt) }}
     '@type': cim:VoltageLevel
@@ -37,6 +39,7 @@
     cim:VoltageLevel.Substation:
       '@id': urn:uuid:{{ uuid5(ssn) }}
     cim:IdentifiedObject.mRID: {{ uuid5('vl2_' + pt) }}
+    cim:IdentifiedObject.name: VL2 {{ pt }} (10 kV)
   # --- cim:ConnectivityNode (2) ----------------------------------------------
   - '@id': urn:uuid:{{ uuid5('cn2_' + pt) }}
     '@type': cim:ConnectivityNode
@@ -64,9 +67,9 @@
       '@id': urn:uuid:{{ uuid5('apd_' + pt) }}
     cim:OperationalLimit.OperationalLimitSet:
       '@id': urn:uuid:{{ uuid5('ols_' + pt) }}
-    cim:IdentifiedObject.description: Aanwezige transportcapaciteit (afname)
     cim:IdentifiedObject.mRID: {{ uuid5('apld_' + pt) }}
-    nl:OperationalLimit.positiveFlowIn: true
+    cim:IdentifiedObject.name: Aanwezige transportcapaciteit (afname)
+    nl:OperationalLimit.positiveFlowIn: false
   - '@id': urn:uuid:{{ uuid5('apd_' + pt) }}
     '@type': cim:ActivePower
     cim:ActivePower.multiplier:
@@ -85,9 +88,9 @@
       '@id': urn:uuid:{{ uuid5('apg_' + pt) }}
     cim:OperationalLimit.OperationalLimitSet:
       '@id': urn:uuid:{{ uuid5('ols_' + pt) }}
-    cim:IdentifiedObject.description: Aanwezige transportcapaciteit (invoeding)
     cim:IdentifiedObject.mRID: {{ uuid5('aplg_' + pt) }}
-    nl:OperationalLimit.positiveFlowIn: false
+    cim:IdentifiedObject.name: Aanwezige transportcapaciteit (invoeding)
+    nl:OperationalLimit.positiveFlowIn: true
   - '@id': urn:uuid:{{ uuid5('apg_' + pt) }}
     '@type': cim:ActivePower
     cim:ActivePower.multiplier:
@@ -106,3 +109,4 @@
     cim:OperationalLimitSet.Terminal:
       '@id': urn:uuid:{{ uuid5('t2_' + pt) }}
     cim:IdentifiedObject.mRID: {{ uuid5('ols_' + pt) }}
+    cim:IdentifiedObject.name: Aanwezige transportcapaciteit

@@ -210,8 +210,8 @@ $ jq -r '
 
 ## Aannames
 
-1. `cim:Substation`-s zijn aangeleverd door Liander, moeten uit de boundary
-   dataset van TenneT komen en gekoppeld worden
+1. `cim:Substation`-s zijn aangeleverd door Liander, moeten gekoppeld worden
+   aan de `BoundaryPoint`-s uit de dataset van TenneT
 2. `cim:BaseVoltage` voor de secundaire zijde van de trafo's is niet bekend,
    wordt nu voor alle `cim:VoltageLevel`-s op 10 kV gezet
 3. [gecontroleerd] alle postcodes zijn uniek, er worden geen postcodes aan

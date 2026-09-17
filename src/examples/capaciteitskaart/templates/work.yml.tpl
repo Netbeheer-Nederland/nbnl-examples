@@ -22,7 +22,7 @@
     cim:BaseWork.TimeSchedules:
       - '@id': urn:uuid:{{ ts }}
     {% endif %}
-    cim:IdentifiedObject.description: {{ proj }}
+    cim:IdentifiedObject.name: {{ proj }}
     cim:IdentifiedObject.mRID: 7bdde4a9-2022-41a3-87b0-35c011e102c9
   {% if year %}
   - '@id': urn:uuid:{{ ts }}

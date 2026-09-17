@@ -7,9 +7,10 @@
       '@id': urn:uuid:{{ uuid5('qap_' + pt) }}
     nl:Queue.ReportingGroup:
       - urn:uuid:{{ uuid5('rg_' + pt) }}
-    nl:Queue.positiveFlowIn: true
-    cim:IdentifiedObject.description: Afname {{ pt }}
+    nl:Queue.direction:
+      '@id': cim:InterTieDirection.E
     cim:IdentifiedObject.mRID: {{ uuid5('q_' + pt) }}
+    cim:IdentifiedObject.name: Afname {{ pt }}
   - '@id': urn:uuid:{{ uuid5('qap_' + pt) }}
     '@type': cim:ActivePower
     cim:ActivePower.multiplier:
@@ -33,8 +34,8 @@
       - urn:uuid:{{ uuid5('t2_' + pt) }}
     cim:Measurement.PowerSystemResource:
       - urn:uuid:{{ uuid5(pt) }}
-    cim:IdentifiedObject.description: Afname {{ pt }}
     cim:IdentifiedObject.mRID: {{ uuid5('gtc_' + pt) }}
+    cim:IdentifiedObject.name: Afname {{ pt }}
   - '@id': urn:uuid:{{ uuid5('gtcav_' + pt) }}
     '@type': cim:AnalogValue
     cim:AnalogValue.value:

@@ -10,7 +10,8 @@
       - urn:uuid:{{ uuid5('cd_' + pt) }}
     nl:CongestionDocument.constraint:
       '@id': nl:RAGKind.{{ dc }}
-    nl:CongestionDocument.positiveFlowIn: true
+    nl:CongestionDocument.direction:
+      '@id': cim:InterTieDirection.E
     {% if year %}
     nl:CongestionDocument.alleviationYear: {{ year }}
     {% endif %}
