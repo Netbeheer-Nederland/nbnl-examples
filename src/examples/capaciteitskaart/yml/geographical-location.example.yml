@@ -13,7 +13,7 @@
   '@id': urn:uuid:4f74c8e2-adb5-4815-9607-eb00fb6a0d55
   'dcterms:title': 'Liander N.V.'
 'dcterms:conformsTo':
-  - '@id': https://modellen.netbeheernederland.nl/nbnl-geographical-location/1.2
+  - '@id': https://modellen.netbeheernederland.nl/nbnl-geographical-location/1.3
 'dcterms:references':
   - '@id': urn:uuid:ae5f28c7-c9f3-4407-a139-7772566a4d2c
 '@graph':
