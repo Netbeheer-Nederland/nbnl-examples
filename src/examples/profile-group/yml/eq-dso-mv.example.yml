@@ -113,18 +113,10 @@
     cim:Terminal.ConductingEquipment:
       '@id': urn:uuid:a5b57c56-a824-411c-b0b9-db68bb2a9fe6
     cim:IdentifiedObject.mRID: af479e25-2afe-4410-965d-f6cec798a3e8
-  - '@id': urn:uuid:2a825e01-93f9-4f71-9860-952ed94a2693
-    '@type': cim:VoltageLevel
-    cim:VoltageLevel.BaseVoltage:
-      '@id': urn:uuid:45b9413e-a116-4952-8cf8-aeb4b2e53348
-    cim:VoltageLevel.Substation:
-      '@id': urn:uuid:3deea2c7-5fdf-464f-a904-b195eb84f89a
-    cim:IdentifiedObject.mRID: 2a825e01-93f9-4f71-9860-952ed94a2693
-    cim:IdentifiedObject.name: 'VL5 Onderstation 10 kV'
   - '@id': urn:uuid:69791751-35fa-45c9-b111-ae2fe5e4ca51
     '@type': cim:ConnectivityNode
     cim:ConnectivityNode.ConnectivityNodeContainer:
-      '@id': urn:uuid:2a825e01-93f9-4f71-9860-952ed94a2693
+      '@id': urn:uuid:182198a6-7817-45bc-be6f-d67fe34c1d95
     cim:IdentifiedObject.mRID: 69791751-35fa-45c9-b111-ae2fe5e4ca51
   # --- cim:PowerTransformer (3) ----------------------------------------------
   - '@id': urn:uuid:f3695f11-3219-4a5a-9ae0-1fc6e815efcf
