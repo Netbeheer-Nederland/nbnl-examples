@@ -23,6 +23,9 @@
       "nl:CongestionDocument.constraint": {
         "@id": "nl:RAGKind.red"
       },
+      "nl:CongestionDocument.direction": {
+        "@id": "cim:InterTieDirection.E"
+      },
       "nl:CongestionDocument.alleviationYear": 2028,
       "cim:Document.electronicAddress": {
         "@id": "urn:uuid:579fd3cd-ba97-453f-a8e9-61ada7ea1d3b"
