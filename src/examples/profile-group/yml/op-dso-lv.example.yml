@@ -7,6 +7,30 @@
   nl: https://cim.ucaiug.io/ns/nl#
   xsd: http://www.w3.org/2001/XMLSchema#
 '@graph':
+  - '@id': urn:uuid:aa61b85d-c074-425c-9eb9-52ed2c88f133
+    '@type': cim:Analog
+    cim:Analog.positiveFlowIn: false
+    cim:Measurement.unitMultiplier:
+      '@id': cim:UnitMultiplier.k
+    cim:Measurement.unitSymbol:
+      '@id': cim:UnitSymbol.W
+    cim:Measurement.Terminal:
+      - urn:uuid:b5e07ab7-8132-485d-bc5a-db259e8b5fbe
+    cim:Measurement.PowerSystemResource:
+      - urn:uuid:310d6631-3021-4a1a-b15e-feea4c695ae9
+    cim:IdentifiedObject.mRID: aa61b85d-c074-425c-9eb9-52ed2c88f133
+    cim:IdentifiedObject.name: 'PowerTransformer (afname)'
+  - '@id': urn:uuid:31a520b3-525e-4532-b774-bfd0187f358f
+    '@type': cim:AnalogValue
+    cim:AnalogValue.value:
+      '@value': 8.0
+      '@type': xsd:float
+    cim:AnalogValue.Analog:
+      '@id': urn:uuid:aa61b85d-c074-425c-9eb9-52ed2c88f133
+    cim:MeasurementValue.timeStamp:
+      '@value': '2026-10-06T00:00:00.000Z'
+      '@type': xsd:dateTime
+    cim:IdentifiedObject.mRID: 31a520b3-525e-4532-b774-bfd0187f358f
   # --- cim:Analog ------------------------------------------------------------
   - '@id': urn:uuid:9b8611ff-28e2-4b9e-baa9-c90c098ba669
     '@type': cim:Analog
