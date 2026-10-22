@@ -1,4 +1,4 @@
-  {% set pt = 'pt_' + ssn + pt -%}
+  {% set pt = 'pt_' + ssn + '_' + pt -%}
   # --- cim:TopologicalNode (PTE-EC) ------------------------------------------
   - '@id': urn:uuid:{{ uuid5('tn_' + ean + pc + hn + ssn + pt) }}
     '@type': cim:TopologicalNode

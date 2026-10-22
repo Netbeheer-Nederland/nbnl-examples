@@ -1,4 +1,4 @@
-  {% set pt = 'pt_' + ssn + pt -%}
+  {% set pt = 'pt_' + ssn + '_' + pt -%}
   # --- cim:PowerTransformer --------------------------------------------------
   - '@id': urn:uuid:{{ uuid5(pt) }}
     '@type': cim:PowerTransformer
