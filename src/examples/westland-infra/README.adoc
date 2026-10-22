@@ -1,0 +1,31 @@
+# Set-up
+
+Use the _upcoming_ version of _build-dp_ to run the commands below. Use the the
+directory containing this README as base directory for the container. If
+something doesn't work, look at paths first.
+
+# Convert to profiles
+
+## Equipment (EQ)
+
+[source,bash]
+----
+$ csvcut -c 1 csv/Netstations.csv|tail -n +2|gen-linkml-profile template --var ssn templates/substation.yml.tpl >> yml/equipment.yml
+$ csvcut -c 1,2,3,4 csv/Transformator_stations.csv|tail -n +2|gen-linkml-profile template --var ssn --var pt --var pte1 --var pte2 templates/power-transformer.yml.tpl >> yml/equipment.yml
+$ csvcut -c 1,2,3 csv/Overdrachtspunten_met_klanten.csv|tail -n +2|gen-linkml-profile template --var ean --var pc --var hn templates/energy-consumer.yml.tpl >> yml/equipment.yml
+----
+
+## Topology (TP)
+
+[source,bash]
+----
+$ csvcut -c 1,2,3,5,4 csv/Overdrachtspunten_met_klanten.csv|tail -n +2|gen-linkml-profile template --var ean --var pc --var hn --var ssn --var pt templates/topology-ec.yml.tpl >> yml/topology.yml
+----
+
+## GeoLocation (GL)
+
+[source,bash]
+----
+$ csvcut -c 1,2,3,6,7 csv/Overdrachtspunten_met_klanten.csv|tail -n +2|gen-linkml-profile template --var ean --var pc --var hn --var x_pos --var y_pos templates/geolocation-ec.yml.tpl >> yml/geographical-location.yml
+$ csvsql --no-inference --query "SELECT DISTINCT Substation, PowerTransformerX, PowerTransformerY from Transformator_stations GROUP BY Substation" csv/Transformator_stations.csv|grep -v ,,|tail -n +2|gen-linkml-profile template --var ssn --var x_pos --var y_pos templates/geographical-location-ss.yml.tpl >> yml/geographical-location.yml
+----
