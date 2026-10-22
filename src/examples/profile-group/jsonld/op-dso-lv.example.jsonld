@@ -26,7 +26,7 @@
         "urn:uuid:310d6631-3021-4a1a-b15e-feea4c695ae9"
       ],
       "cim:IdentifiedObject.mRID": "aa61b85d-c074-425c-9eb9-52ed2c88f133",
-      "cim:IdentifiedObject.name": "PowerTransformer (afname)"
+      "cim:IdentifiedObject.name": "PT1 (afname)"
     },
     {
       "@id": "urn:uuid:31a520b3-525e-4532-b774-bfd0187f358f",
