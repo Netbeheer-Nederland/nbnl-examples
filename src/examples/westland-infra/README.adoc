@@ -22,10 +22,15 @@ $ csvcut -c 1,2,3 csv/Overdrachtspunten_met_klanten.csv|tail -n +2|gen-linkml-pr
 $ csvcut -c 1,2,3,5,4 csv/Overdrachtspunten_met_klanten.csv|tail -n +2|gen-linkml-profile template --var ean --var pc --var hn --var ssn --var pt templates/topology-ec.yml.tpl >> yml/topology.yml
 ----
 
-## GeoLocation (GL)
+## GeographicalLocation (GL)
 
 [source,bash]
 ----
-$ csvcut -c 1,2,3,6,7 csv/Overdrachtspunten_met_klanten.csv|tail -n +2|gen-linkml-profile template --var ean --var pc --var hn --var x_pos --var y_pos templates/geolocation-ec.yml.tpl >> yml/geographical-location.yml
+$ csvcut -c 1,2,3,6,7 csv/Overdrachtspunten_met_klanten.csv|tail -n +2|gen-linkml-profile template --var ean --var pc --var hn --var x_pos --var y_pos templates/geographical-location-ec.yml.tpl >> yml/geographical-location.yml
 $ csvsql --no-inference --query "SELECT DISTINCT Substation, PowerTransformerX, PowerTransformerY from Transformator_stations GROUP BY Substation" csv/Transformator_stations.csv|grep -v ,,|tail -n +2|gen-linkml-profile template --var ssn --var x_pos --var y_pos templates/geographical-location-ss.yml.tpl >> yml/geographical-location.yml
 ----
+
+## TO-DO
+
+* No `TopologicalNode`-s for `PT-PT`, as the needed data (ssn+pt) is not available in the CSV. Only PT-name is provided
+* No connection to TenneT `eu:BoundaryPoint`, as this requires a modelling decision (Team Semantiek)
