@@ -15,9 +15,33 @@
     cim:TransformerEnd.Terminal:
       '@id': urn:uuid:{{ uuid5('t1_' + pt) }}
     cim:IdentifiedObject.mRID: {{ uuid5('pte1_' + pt) }}
+  # --- cim:VoltageLevel (1) --------------------------------------------------
+  - '@id': urn:uuid:{{ uuid5('vl1_' + pt) }}
+    '@type': cim:VoltageLevel
+    cim:VoltageLevel.BaseVoltage:
+    {% if pte1 == "0.4" %}
+      '@id': urn:uuid:b7482b2f-bcb8-46e9-99b1-e0cd09f3c205
+    {% elif pte1 == "10" %}
+      '@id': urn:uuid:45b9413e-a116-4952-8cf8-aeb4b2e53348
+    {% elif pte1 == "20" %}
+      '@id': urn:uuid:4ace87c9-16c7-4097-914f-d4551d7d8cd5
+    {% elif pte1 == "25" %}
+      '@id': urn:uuid:d5445f84-09ac-4647-b6b2-ed81cc5ab76b
+    {% endif %}
+    cim:VoltageLevel.Substation:
+      '@id': urn:uuid:{{ uuid5(ssn) }}
+    cim:IdentifiedObject.mRID: {{ uuid5('vl1_' + pt) }}
+  # --- cim:ConnectivityNode (1) ----------------------------------------------
+  - '@id': urn:uuid:{{ uuid5('cn1_' + pt) }}
+    '@type': cim:ConnectivityNode
+    cim:ConnectivityNode.ConnectivityNodeContainer:
+      '@id': urn:uuid:{{ uuid5('vl1_' + pt) }}
+    cim:IdentifiedObject.mRID: {{ uuid5('cn1_' + pt) }}
   # --- cim:Terminal (1) ------------------------------------------------------
   - '@id': urn:uuid:{{ uuid5('t1_' + pt) }}
     '@type': cim:Terminal
+    cim:Terminal.ConnectivityNode:
+      '@id': urn:uuid:{{ uuid5('cn1_' + pt) }}
     cim:Terminal.ConductingEquipment:
       '@id': urn:uuid:{{ uuid5(pt) }}
     cim:IdentifiedObject.mRID: {{ uuid5('t1_' + pt) }}
